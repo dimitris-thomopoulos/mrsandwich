@@ -1,0 +1,1298 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input,textarea {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Manrope';
+}
+
+label {
+    font-family: 'Manrope';
+}
+
+input[type="submit"] {
+    font-family: 'Jura';
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+/*
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+*/
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+
+/* HEADER STYLES */
+
+
+button, img, svg, iframe, video {
+    user-select: none;
+}
+
+body *::selection {
+    background:#C64317;
+    color: white;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button,a,h1,h3,h4,h6 {
+    font-family: Jura;
+}
+
+p,span {
+    font-family: Manrope;
+}
+
+h2,h5 {
+    font-family: 'Knewave';
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 56px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#burger-menu {
+    display: none;
+    margin-right: 35px;
+}
+
+#burger-menu:hover {
+    cursor: pointer;
+}
+
+.menu-food img.mobile-menu-food-image {
+    display: none;
+}
+
+header, #logo {
+    height: 174px;
+}
+
+#navbar > #logo > img {
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar > #logo > img.invisible {
+    transform: scale(0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+header {
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8EAD4;
+    z-index: 10;
+    width: 100%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+}
+
+.content {
+    padding: 16px;
+}
+
+section#burgers {
+    padding-top: 174px;
+}
+
+#logo, #weekly-offer {
+    position: absolute;
+}
+
+#logo {
+    left: 0;
+    padding-left: 30px;
+}
+
+#weekly-offer {
+    right: 0;
+    top: 0;
+}
+
+nav, nav > ul, nav > ul > li {
+    display: inline;
+    text-align: center;
+}
+
+.nav-item > a {
+    width: 100%;
+}
+
+.nav-item a {
+    color: #846060;
+    font-weight: 400;
+}
+
+.nav-item a:hover {
+    color: #AA1717;
+}
+
+.nav-item a.active {
+    color: #AA1717;
+    font-weight: 700;
+}
+
+.nav-item a.active:hover {
+    color: #AA1717;
+}
+
+.top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(6)) {
+    margin: 0 20px;
+}
+
+.top-nav-item:nth-of-type(1) {
+    margin-right: 20px;
+}
+
+.top-nav-item:nth-of-type(6) {
+    margin-left: 20px;
+}
+
+
+#mobile-nav {
+    background: rgba(198, 67, 23, 0.75);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    z-index: 10;
+    max-width: 304px;
+    width: 0;
+    border-bottom-right-radius: 15px;
+    box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-nav > ul > li > a {
+    font-size: 0.1px;
+    color: white;
+    display: block;
+    padding: 15px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#mobile-nav.visible {
+    width: 70vw;
+}
+
+#mobile-nav > ul > li > a.visible {
+    font-size: 30px;
+    transition: font 0.3s ease-in-out;
+}
+
+
+#mobile-nav > ul > li > a:hover {
+    color: #ffcd15;
+    transition: all 0.2s ease-in-out;
+}
+
+#mobile-nav > ul > li:nth-of-type(1) > a {
+    margin-top: 25px;
+}
+
+#mobile-nav > ul > li:nth-of-type(6) > a {
+    margin-bottom: 25px;
+}
+
+
+.mobile-nav-item {
+    text-align: center; 
+}
+
+.mobile-nav-item > a {
+    text-shadow: -2px 2px 4px rgba(0,0,0,0.4);
+}
+
+
+
+/* MENU SECTION */
+
+section > h1 {
+    margin: 15px 0 120px 0;
+    display: inline-block;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-food {
+    display: flex;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.menu-food .right {
+    margin-left: 160px;
+}
+
+.menu-food .left, .menu-food .right {
+    display: inline-block;
+}
+
+.menu-food img {
+    display: flex;
+    max-height: 560px;
+}
+
+.food-title {
+    font-size: 42px;
+}
+
+#pizza .food-title, #salates .food-title {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#burgers .food-title {
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+}
+
+.food-price {
+    font-size: 24px;
+}
+
+.food-description {
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 30px 0 60px 0;
+}
+
+.food-title, .food-price {
+    display: inline-block;
+}
+
+.food-price {
+    margin-left: 30px;
+}
+
+.icon-separator {
+    width: 1px;
+    height: 92px;
+    display: inline-block;
+}
+
+.food-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.food-icons .col {
+    display: inline-block;
+    text-align: center;
+}
+
+.food-icons .col h6 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    margin-top: 25px;
+    letter-spacing: initial;
+    transition: letter-spacing 0.3s ease-in-out;
+}
+
+.food-icons .col img {
+    padding: 0 40px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.food-icons .col:hover h6 {
+    letter-spacing: 1.2px;
+    transition: letter-spacing 0.3s ease-in-out;
+}
+
+.food-icons .col:hover img {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-food .left .button-area, .menu-food .right .button-area {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-category .show-more {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 13px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 120px;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-category .show-more:hover {
+    box-shadow: 0px 0 0 rgba(0,0,0,0.25);
+}
+
+.add-to-cart {
+    border: none;
+    padding: 13px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+
+
+
+/* BURGERS SECTION */
+
+section#burgers {
+    background-color: #F8EAD4;
+}
+
+#burgers h1 {
+    color: #C64317;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#burgers .food-price {
+    color: #C64317;
+    text-shadow: 2px 2px #FBDB32;
+}
+
+#burgers .food-title {
+    color: #982A3A;
+}
+
+#burgers .food-description {
+    color: #883417;
+}
+
+#burgers .icon-separator {
+    background-color: rgba(152,42,58,0.2);
+}
+
+#burgers .food-icons .col h6 {
+    color: #982A3A;
+}
+
+#chicken-dinner img {
+    max-height: 340px;
+}
+
+#burgers .add-to-cart {
+    background-color: #C64317;
+    color: white;
+}
+
+#double-trouble .add-to-cart {
+    box-shadow: -5px 5px #FFB72B;
+}
+
+#chicken-dinner .add-to-cart {
+    box-shadow: 5px 5px #FFB72B;
+}
+
+#double-trouble button.add-to-cart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px #FFB72B;
+    background-color: #982A3A;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#chicken-dinner button.add-to-cart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px #FFB72B;
+    background-color: #982A3A;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#burgers .show-more {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #982A3A;
+    color: white;
+}
+
+#burgers .show-more:hover {
+    box-shadow: 0px 0 0 rgba(0,0,0,0.25);
+    background-color: #c64317;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+/* PIZZA SECTION */
+
+section#pizza {
+    background-color: #a62e40;
+}
+
+#pizza h1 {
+    color: #FFB72B;
+    margin-top: 60px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#pizza .food-price {
+    color: #FFEC3E;
+    text-shadow: 2px 2px #C64317;
+}
+
+#pizza .food-title {
+    color: #F2D6A2;
+}
+
+#pizza .food-description {
+    color: #F8F1E3;
+    font-size: 16px;
+    line-height: 20px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#pizza .icon-separator {
+    background-color: rgba(242, 214, 162, 0.2);
+}
+
+#pizza .food-icons .col h6 {
+    color: #F2D6A2;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#pizza img {
+    max-height: 280px;
+}
+
+#pizza .add-to-cart {
+    background-color: #ffb72a;
+    color: #831D2C;
+} 
+
+#pepperoni-hell .add-to-cart {
+    box-shadow: -5px 5px 0px rgba(131, 31, 34, 0.77);
+}
+
+#xoriatiki-classic .add-to-cart {
+    box-shadow: 5px 5px 0px rgba(131, 31, 34, 0.77);
+}
+
+#pepperoni-hell button.add-to-cart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(131, 31, 34, 0.77);
+    background-color: #F2D6A2;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#xoriatiki-classic button.add-to-cart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(131, 31, 34, 0.77);
+    background-color: #F2D6A2;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#pizza .show-more {
+    background-color: #F2D6A2;
+    color: #831D2C;
+}
+
+#pizza .show-more:hover {
+    background-color: #FFB72B;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+/* SALAD SECTION */
+
+section#salates {
+    background-color: #357633;
+}
+
+#salates h1 {
+    color: white;
+    margin-top: 60px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#salates .food-price {
+    color: white;
+    text-shadow: 2px 2px #1A3A19;
+}
+
+#salates .food-title {
+    color: #FBFF15;
+}
+
+#salates .food-description {
+    color: #F8F1E3;
+    font-size: 16px;
+    line-height: 20px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#salates .icon-separator {
+    background-color: rgba(251, 255, 21, 0.2);
+}
+
+#salates .food-icons .col h6 {
+    color: #FBFF15;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#salates img {
+    max-height: 420px;
+}
+
+#salates .add-to-cart {
+    background-color: white;
+    color: #1A3A19;
+} 
+
+#caesars-salad .add-to-cart {
+    box-shadow: -5px 5px 0px rgba(26, 58, 25, 0.77);
+}
+
+#greek-freak .add-to-cart {
+    box-shadow: 5px 5px 0px rgba(26, 58, 25, 0.77);
+}
+
+#caesars-salad button.add-to-cart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(26, 58, 25, 0.77);
+    background-color: #FBFF15;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#greek-freak button.add-to-cart:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(26, 58, 25, 0.77);
+    background-color: #FBFF15;
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#salates .show-more {
+    background-color: #FBFF15;
+    color: #1F461E;
+}
+
+#salates .show-more:hover {
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+
+/* CONTACT SECTION */
+
+section#contact {
+    background-color: #F8EAD4;
+    width: 100%;
+}
+
+#contact h1 {
+    color: #C64317;
+    margin-top: 60px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#contact-map {
+    width: 73.3%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 120px;
+}
+
+#contact-form {
+    max-width: 621px;
+}
+
+#contact-form > p {
+    line-height: 22px;
+    margin-bottom: 12px;
+    color: #432B2F;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact form label {
+    margin: 33px 0 10px 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #982A3A;
+}
+
+#contact form input[type="text"], #contact form input[type="email"] {
+    height: 40px;
+    border: 1px solid transparent;
+}
+
+#contact form input[type="text"]:focus, #contact form input[type="email"]:focus, #contact form textarea:focus {
+    border: 1px solid #C64317;
+}
+
+#contact form label[for="acceptance"] {
+    margin-top: 0;
+    margin-bottom: 40px;
+    vertical-align: bottom;
+
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.035em;
+    color: #A3616A;
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
+}
+
+#contact form textarea {
+    resize: none;
+    border: 1px solid transparent;
+}
+
+#contact input[type="checkbox"] {
+    margin-left: 0;
+    margin-top: 40px;
+}
+
+#contact input[type="submit"] {
+    margin-top: 40px;
+    width: 153px;
+    align-self: flex-end;
+    padding: 13px 20px;
+
+    border-radius: 3px;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: #C64317
+}
+
+#contact input[type="submit"]:hover {
+    background: #982A3A;
+}
+
+#contact iframe {
+    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.1));
+    border-radius: 10px;
+}
+
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+    height: 300px;
+    background-color: #982A3A;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#footer-logo {
+    margin-left: 69px;
+}
+
+#footer-nav, .footer-nav {
+    display: inline-block;
+}
+
+.footer-nav h6 {
+    font-size: 20px;
+    line-height: 24px;
+    color: #F8EAD4;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav ul li {
+    margin: 5px 0;
+}
+
+.footer-nav ul li a {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFD88D;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-nav ul li a:hover {
+    color: #ffcd15;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-nav {
+    margin: 0 35px;
+}
+
+#newsletter {
+    display: flex;
+    flex-direction: column;
+}
+
+#newsletter-submit {
+    display: flex;
+    flex-direction: column;
+}
+
+#newsletter input[type="email"] {
+    text-align: center;
+    height: 50px;
+    background: #F8EAD4;
+    border-radius: 5px 5px 0px 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+#newsletter input[type="email"]:focus {
+    background: white;
+    transition: all 0.2s ease-in-out;
+}
+
+#newsletter input[type="submit"] {
+    height: 51px;
+    background: #FFBA32;
+    color: #982A3A;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#newsletter input[type="submit"]:hover {
+    background-color: #c64317;
+    color: white;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#newsletter h6 {
+    display: inline;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 25px;
+}
+
+
+
+
+
+/* COPYRIGHT FOOTER */
+
+#copyright {
+    background-color: #79212E;
+    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.15);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#copyright p, #copyright p > a {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    font-weight: 300;
+    display: inline;
+    font-family: 'Manrope';
+}
+
+#copyright p > a {
+    text-decoration: underline;
+}
+
+#copyright p > a:hover {
+    color: #ffcd15;
+}
+
+#copyright p:nth-of-type(1) {
+    margin-left: 10vw;
+}
+
+#copyright p:nth-of-type(3) {
+    margin-right: 10vw;
+}
+
+
+
+
+
+
+/* ADDED TO CART OVERLAY */
+
+/* #added-to-cart {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    opacity: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#added-to-cart {
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    width: 350px;
+    padding: 25px 50px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    transform: scale(0.001) translate(-50%,-50%);
+    opacity: 0;
+    z-index: 20;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+#added-to-cart.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#added-to-cart h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #79212E;
+    font-weight: 500;
+}
+
+#added-to-cart button {
+    padding: 10px 25px;
+    border-radius: 50px;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    transition: background 0.2s ease-in-out;
+}
+
+#added-to-cart button:hover {
+    background-color: darkgreen;
+    transition: background 0.2s ease-in-out;
+}
+
+#added-to-cart.open {
+    opacity: 1;
+    transform: scale(1) translate(-50%,-50%);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+
+
+
+
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+
+
+/* small desktop screens */
+
+@media (max-width: 1600px) {
+    iframe {
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 1440px) {
+    #weekly-offer {
+        display: none;
+    }
+
+    header {
+        justify-content: right;
+    }
+
+    nav#top-nav {
+        margin-right: 120px;
+    }
+}
+
+
+/* mobile/tablet devices */
+
+@media (max-width: 1206px) {
+
+    /* header */
+
+    nav#top-nav {
+        display: none;
+    }
+
+    #burger-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #burger-menu > img:nth-of-type(1) {
+        margin-bottom: 2px;
+        transform-origin: 0% 50%;
+        transform: rotate(0deg);
+        transition: all 0.3s ease-in-out;
+    }
+
+    #burger-menu > img:nth-of-type(2) {
+        margin: 5px 0;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #burger-menu > img:nth-of-type(3) {
+        transform-origin: 0% 50%;
+        transform: rotate(0deg);
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    /* burger menu icons classes */
+
+    #burger-menu > img:nth-of-type(1).animate-icon {
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in-out;
+    }
+
+    #burger-menu > img:nth-of-type(3).animate-icon {
+        transform: rotate(-45deg);
+        transition: all 0.3s ease-in-out;
+    }
+
+    #burger-menu > img:nth-of-type(2).animate-icon {
+        opacity: 0;
+        transform: scale(0.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    /* menu */
+
+    .menu-food img.mobile-menu-food-image {
+        display: block;
+        width: 250px;
+        margin: 30px auto;
+        align-self: center;
+    }
+
+    .left, .right {
+        text-align: center;
+    }
+
+    .food-description {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    .food-price {
+        margin-left: 15px;
+    }
+
+    #double-trouble > .right {
+        display: none;
+    }
+
+    #chicken-dinner > .left {
+        display: none;
+    }
+
+    #pepperoni-hell > .right {
+        display: none;
+    }
+
+    #xoriatiki-classic > .left {
+        display: none;
+    }
+
+    #caesars-salad > .right {
+        display: none;
+    }
+
+    #greek-freak > .left {
+        display: none;
+    }
+
+    .menu-food .right {
+        margin-left: 0;
+    }
+
+    
+    /* contact section */
+
+    #contact-map {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact input[type="submit"] {
+        width: 60%;
+        align-self: center;
+    }
+
+    #contact iframe {
+        margin-left: 0;
+        margin-top: 100px;
+    }
+
+
+    /* footer */
+
+    footer {
+        height: 600px;
+        flex-direction: column;
+    }
+
+    img#footer-logo {
+        margin-left: 0;
+    }
+
+}
+
+
+@media (max-width: 980px) {
+    #copyright {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        
+    }
+    
+    #copyright > p {
+        margin: 10px 0 !important;
+    }
+}
+
+
+@media (max-width: 680px) {
+    #footer-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        height: 1200px;
+    }
+
+    .footer-nav {
+        margin: 30px 35px;
+    }
+
+
+
+}
+
+
+@media (max-width: 520px) {
+
+    header,#logo {
+        height: 119px;
+    }
+
+    header > a#logo > img {
+        width: 219px;
+    }
+
+    iframe {
+        max-width: 90vw;
+    }
+    
+    .food-icons {
+        justify-content: center;
+    }
+
+    .food-icons .col img {
+        padding: 0  30px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    .food-title {
+        font-size: 32px;
+    }
+
+    .food-price {
+        font-size: 20px;
+    }
+
+    #added-to-cart {
+        width: 250px;
+    }
+
+    #added-to-cart h3 {
+        font-size: 20px;
+    }
+
+
+
+}
+
+@media (max-width: 420px) {
+    
+    .icon-separator {
+        display: none;
+    }
+
+    .food-icons {
+        flex-direction: column;
+    }
+
+    .food-icons .col {
+        margin: 25px 0;
+    }
+    
+    #added-to-cart {
+        padding: 18px 20px;
+    }
+
+    #added-to-cart h3 {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    header > a#logo {
+        display: flex;
+        align-items: center;
+    }
+
+    header > a#logo > img {
+        width: 180px;
+    }
+}
+
+@media (max-width: 350px) {
+    .food-price {
+        font-size: 18px;
+    }
+
+    .food-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 329px) {
+    .food-price {
+        margin-left: 5px;
+    }
+}
