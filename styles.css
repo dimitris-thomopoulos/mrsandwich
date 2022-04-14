@@ -401,7 +401,7 @@ section {
     align-items: baseline;
     transform: translateY(25px);
     right: 0;
-    position: relative;
+    /* position: absolute; */
 }
 
 .food-list > li {
