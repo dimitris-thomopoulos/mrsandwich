@@ -22,6 +22,7 @@ time, mark, audio, video {
 @font-face {
     font-family: "Dela Gothic One";
     src: url("./fonts/Dela_Gothic_One/DelaGothicOne-Regular.ttf");
+    font-display: swap;
   }
 
 * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -131,7 +132,7 @@ h1,h2,h5 {
 }
 
 p,span {
-    font-family: Manrope;
+    font-family: 'Manrope';
 }
 
 h1 {
