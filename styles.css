@@ -286,6 +286,10 @@ nav, nav > ul, nav > ul > li {
     width: 70vw;
 }
 
+#mobile-nav.hidden {
+    display: none;
+}
+
 #mobile-nav > ul > li > a.visible {
     font-size: 30px;
     transition: font 0.3s ease-in-out;
