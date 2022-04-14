@@ -427,6 +427,10 @@ section {
     overflow: hidden;
 }
 
+/* #sandwich .food-list li:nth-of-type(8) .dotted-line {
+    width: 330px;
+} */
+
 .food-list .price-tag {
     font-family: 'Dela Gothic One';
     font-style: normal;
