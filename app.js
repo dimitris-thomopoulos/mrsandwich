@@ -228,7 +228,7 @@ let SandwichDottedLine = [...document.querySelectorAll('#sandwich .food-list .do
 
 setTimeout(function(){for (let i=0; i<9; i++) {
     SandwichDottedLine[i].style.width = `${857 - 160 - SandwichFoodDescription[i].offsetWidth}px`;
-}}, 100);
+}}, 200);
 
 
 
