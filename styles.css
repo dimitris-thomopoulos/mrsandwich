@@ -104,6 +104,11 @@ body *::selection {
     color: white;
 }
 
+header *::selection, #sandwich *::selection, #my-sandwich *::selection {
+    background: #9B191F;
+    color: white;
+}
+
 button {
     border: none;
 }
@@ -112,16 +117,16 @@ button:hover {
     cursor: pointer;
 }
 
-button,a,h1,h3,h4,h6 {
+button,a,h3,h4,h6 {
     font-family: Jura;
+}
+
+h1,h2,h5 {
+    font-family: 'Dela Gothic One';
 }
 
 p,span {
     font-family: Manrope;
-}
-
-h2,h5 {
-    font-family: 'Knewave';
 }
 
 h1 {
@@ -142,12 +147,12 @@ a {
     cursor: pointer;
 }
 
-.menu-food img.mobile-menu-food-image {
+.menu-category-showcase img.mobile-menu-food-image {
     display: none;
 }
 
-header, #logo {
-    height: 174px;
+header {
+    height: 252px;
 }
 
 #navbar > #logo > img {
@@ -162,9 +167,10 @@ header, #logo {
 
 header {
     display: flex;
-    position: absolute;
+    flex-direction: column;
+    position: relative;
     top: 0;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #F8EAD4;
     z-index: 10;
@@ -182,22 +188,32 @@ header {
     padding: 16px;
 }
 
-section#burgers {
-    padding-top: 174px;
+#section h1 {
+    text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.15);
+    font-family: 'Dela Gothic One';
+    font-size: 56px;
+    margin-top: 120px;
 }
+
+/* section#burgers {
+    padding-top: 174px;
+} */
 
 #logo, #weekly-offer {
-    position: absolute;
+    //position: absolute;
 }
 
-#logo {
-    left: 0;
-    padding-left: 30px;
+header #logo {
+    margin-top: 40px;
 }
 
 #weekly-offer {
     right: 0;
     top: 0;
+}
+
+header nav {
+    margin-bottom: 30px;
 }
 
 nav, nav > ul, nav > ul > li {
@@ -215,19 +231,19 @@ nav, nav > ul, nav > ul > li {
 }
 
 .nav-item a:hover {
-    color: #AA1717;
+    color: #9B191F;
 }
 
 .nav-item a.active {
-    color: #AA1717;
+    color: #9B191F;
     font-weight: 700;
 }
 
 .nav-item a.active:hover {
-    color: #AA1717;
+    color: #9B191F;
 }
 
-.top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(6)) {
+.top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(9)) {
     margin: 0 20px;
 }
 
@@ -297,7 +313,7 @@ nav, nav > ul, nav > ul > li {
 /* MENU SECTION */
 
 section > h1 {
-    margin: 15px 0 120px 0;
+    margin: 100px 0 90px 0;
     display: inline-block;
 }
 
@@ -307,46 +323,42 @@ section {
     align-items: center;
 }
 
-.menu-food {
+.menu-category-showcase {
     display: flex;
     align-items: center;
     margin-bottom: 120px;
 }
 
-.menu-food .right {
-    margin-left: 160px;
+.menu-category-showcase .right {
+    margin-left: 60px;
 }
 
-.menu-food .left, .menu-food .right {
+.menu-category-showcase .left, .menu-category-showcase .right {
     display: inline-block;
 }
 
-.menu-food img {
+.menu-category-showcase img {
     display: flex;
     max-height: 560px;
 }
 
 .food-title {
-    font-size: 42px;
+    font-size: 30px;
 }
 
 #pizza .food-title, #salates .food-title {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#burgers .food-title {
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.15);
-}
-
 .food-price {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .food-description {
-    max-width: 480px;
-    font-size: 16px;
-    line-height: 20px;
-    margin: 30px 0 60px 0;
+    max-width: 537px;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 30px 0 0px 0;
 }
 
 .food-title, .food-price {
@@ -357,50 +369,84 @@ section {
     margin-left: 30px;
 }
 
-.icon-separator {
-    width: 1px;
-    height: 92px;
+.food-list {
+    background: rgba(255,255,255,0.74);
+    max-width: 857px;
+    position: relative;
+}
+
+.food-list-food {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.food-list-food h3 {
+    font-family: 'Dela Gothic One';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
+
+    display: inline-flex;
+}
+
+.food-list-food p {
+    font-size: 18px;
+    line-height: 25px;
     display: inline-block;
 }
 
-.food-icons {
-    display: flex;
-    align-items: center;
-    margin-bottom: 60px;
+.food-list-food + div {
+    display: inline-flex;
+    align-items: baseline;
+    transform: translateY(25px);
+    right: 0;
+    position: relative;
 }
 
-.food-icons .col {
-    display: inline-block;
-    text-align: center;
+.food-list > li {
+    align-items: flex-end;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    margin: 15px 0;
 }
 
-.food-icons .col h6 {
-    text-align: center;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 18px;
-    margin-top: 25px;
-    letter-spacing: initial;
-    transition: letter-spacing 0.3s ease-in-out;
+.food-list .dotted-line {
+    width: 350px;
+    height: 20px;
+    display: inline-flex;
+    margin-left: 10px;
+    font-family: 'Dela Gothic One';
+    font-size: 14px;
+    opacity: 70%;
+    overflow: hidden;
 }
 
-.food-icons .col img {
-    padding: 0 40px;
-    transform: scale(1);
-    transition: transform 0.3s ease-in-out;
+.food-list .price-tag {
+    font-family: 'Dela Gothic One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    right: 0;
+    margin-left: 10px;
+    /* position: absolute; */
 }
 
-.food-icons .col:hover h6 {
-    letter-spacing: 1.2px;
-    transition: letter-spacing 0.3s ease-in-out;
+#sandwich .food-list .price-tag {
+    color: #9B191F;
+    text-shadow: 3px 3px 0px #FFC700;
 }
 
-.food-icons .col:hover img {
-    transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
+#sandwich .food-list .dotted-line {
+    color: #982A3A;
 }
 
-.menu-food .left .button-area, .menu-food .right .button-area {
+#sandwich .food-list-food h3 {
+    color: #9B191F;
+}
+
+.menu-category-showcase .left .button-area, .menu-category-showcase .right .button-area {
     display: flex;
     justify-content: center;
 }
@@ -431,33 +477,33 @@ section {
 
 /* BURGERS SECTION */
 
-section#burgers {
+section#sandwich {
     background-color: #F8EAD4;
 }
 
-#burgers h1 {
-    color: #C64317;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+#sandwich h1 {
+    color: #9B191F;
 }
 
-#burgers .food-price {
-    color: #C64317;
-    text-shadow: 2px 2px #FBDB32;
+#sandwich .food-price {
+    color: #9B191F;
+    text-shadow: 3px 3px #FFC700;
 }
 
-#burgers .food-title {
-    color: #982A3A;
+#sandwich .food-title {
+    color: #9B191F;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 }
 
-#burgers .food-description {
-    color: #883417;
+#sandwich .food-description {
+    color: #383838;
 }
 
-#burgers .icon-separator {
+#sandwich .icon-separator {
     background-color: rgba(152,42,58,0.2);
 }
 
-#burgers .food-icons .col h6 {
+#sandwich .food-icons .col h6 {
     color: #982A3A;
 }
 
@@ -465,7 +511,7 @@ section#burgers {
     max-height: 340px;
 }
 
-#burgers .add-to-cart {
+#sandwich .add-to-cart {
     background-color: #C64317;
     color: white;
 }
@@ -492,13 +538,13 @@ section#burgers {
     transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
 }
 
-#burgers .show-more {
+#sandwich .show-more {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #982A3A;
     color: white;
 }
 
-#burgers .show-more:hover {
+#sandwich .show-more:hover {
     box-shadow: 0px 0 0 rgba(0,0,0,0.25);
     background-color: #c64317;
     transition: all 0.2s ease-in-out;
@@ -781,7 +827,7 @@ section#contact {
 
 footer {
     height: 300px;
-    background-color: #982A3A;
+    background-color: #21201E;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -1083,7 +1129,7 @@ footer {
 
     /* menu */
 
-    .menu-food img.mobile-menu-food-image {
+    .menu-category-showcase img.mobile-menu-food-image {
         display: block;
         width: 250px;
         margin: 30px auto;
@@ -1127,7 +1173,7 @@ footer {
         display: none;
     }
 
-    .menu-food .right {
+    .menu-category-showcase .right {
         margin-left: 0;
     }
 

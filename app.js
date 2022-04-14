@@ -218,6 +218,39 @@ document.querySelector('nav#footer-nav2 a[href="#salates"').addEventListener('cl
 
 
 
+// Menu food list dots dynamic width
+
+// sandwitch section:
+
+let SandwichListItems = [...document.querySelectorAll('#sandwich .food-list > li')];
+let SandwichFoodDescription = [...document.querySelectorAll('#sandwich .food-list-food p')];
+let SandwichDottedLine = [...document.querySelectorAll('#sandwich .food-list .dotted-line')];
+
+for (let i=0; i<9; i++) {
+    SandwichDottedLine[i].style.width = `${857 - 160 - SandwichFoodDescription[i].offsetWidth}px`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Burger menu click animation (for mobile)
 
 burgerMenu.addEventListener('click', () => {
@@ -233,29 +266,4 @@ burgerMenu.addEventListener('click', () => {
     for (let i=0; i<mobileNavLink.length; i++) {
         mobileNavLink[i].classList.toggle('visible');
     }
-})
-
-
-
-// Add to cart overlay window
-
-let addToCartButtons = [...document.querySelectorAll('.add-to-cart')];
-let addedToCartNotification = document.getElementById('added-to-cart');
-let okay = document.getElementById('okay');
-
-
-
-for (let i=0; i<addToCartButtons.length; i++) {
-    addToCartButtons[i].addEventListener('click', () => {
-        if (!(addToCartButtons[i].classList.contains('in-cart'))) {
-            addedToCartNotification.classList.add('open');
-            addToCartButtons[i].classList.add('in-cart');
-        } else {
-            alert("Το προϊόν βρίσκεται ήδη στο καλάθι σας!")
-        }
-    })
-}
-
-okay.addEventListener('click', () => {
-    addedToCartNotification.classList.remove('open');
 })
