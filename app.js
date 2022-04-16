@@ -28,10 +28,13 @@ let forkIcon = document.querySelector("#burger-menu > img:nth-of-type(3)");
 let mobileNav = document.querySelector("#mobile-nav");
 let mobileNavLink = [...document.querySelectorAll("#mobile-nav > ul > li > a")];
 
+let sandwichSection = document.getElementById('sandwich');
+
 
 function myFunction() {
   if (window.pageYOffset > sticky) {
     navbar.classList.add('sticky');
+    sandwichSection.classList.add('spaced');
 
     if (homeNav.classList.contains('active')) {
         menuNav.classList.add('active');
@@ -40,6 +43,7 @@ function myFunction() {
 
   } else {
     navbar.classList.remove('sticky');
+    sandwichSection.classList.remove('spaced');
 
     menuNav.classList.remove('active');
     burgersNav.classList.remove('active');
@@ -141,53 +145,53 @@ for (let i=0; i<navMenuItems.length; i++) {
 
 // when clicking a menu option on the footer navigation:
 
-document.querySelector('nav#footer-nav1 a[href="#contact"').addEventListener('click', () => {
-    if (!(contactNav.classList.contains('active'))) {
+// document.querySelector('nav#footer-nav1 a[href="#contact"').addEventListener('click', () => {
+//     if (!(contactNav.classList.contains('active'))) {
         
-        contactNav.classList.add('active');
+//         contactNav.classList.add('active');
 
-        menuNav.classList.remove('active');
-        burgersNav.classList.remove('active');
-        pizzaNav.classList.remove('active');
-        salatesNav.classList.remove('active');
-    }
-});
+//         menuNav.classList.remove('active');
+//         burgersNav.classList.remove('active');
+//         pizzaNav.classList.remove('active');
+//         salatesNav.classList.remove('active');
+//     }
+// });
 
-document.querySelector('nav#footer-nav2 a[href="#burgers"').addEventListener('click', () => {
-    if (!(burgersNav.classList.contains('active'))) {
+// document.querySelector('nav#footer-nav2 a[href="#burgers"').addEventListener('click', () => {
+//     if (!(burgersNav.classList.contains('active'))) {
         
-        burgersNav.classList.add('active');
+//         burgersNav.classList.add('active');
 
-        menuNav.classList.remove('active');
-        pizzaNav.classList.remove('active');
-        salatesNav.classList.remove('active');
-        contactNav.classList.remove('active');
-    }
-});
+//         menuNav.classList.remove('active');
+//         pizzaNav.classList.remove('active');
+//         salatesNav.classList.remove('active');
+//         contactNav.classList.remove('active');
+//     }
+// });
 
-document.querySelector('nav#footer-nav2 a[href="#pizza"').addEventListener('click', () => {
-    if (!(pizzaNav.classList.contains('active'))) {
+// document.querySelector('nav#footer-nav2 a[href="#pizza"').addEventListener('click', () => {
+//     if (!(pizzaNav.classList.contains('active'))) {
         
-        pizzaNav.classList.add('active');
+//         pizzaNav.classList.add('active');
 
-        menuNav.classList.remove('active');
-        burgersNav.classList.remove('active');
-        salatesNav.classList.remove('active');
-        contactNav.classList.remove('active');
-    }
-});
+//         menuNav.classList.remove('active');
+//         burgersNav.classList.remove('active');
+//         salatesNav.classList.remove('active');
+//         contactNav.classList.remove('active');
+//     }
+// });
 
-document.querySelector('nav#footer-nav2 a[href="#salates"').addEventListener('click', () => {
-    if (!(salatesNav.classList.contains('active'))) {
+// document.querySelector('nav#footer-nav2 a[href="#salates"').addEventListener('click', () => {
+//     if (!(salatesNav.classList.contains('active'))) {
         
-        salatesNav.classList.add('active');
+//         salatesNav.classList.add('active');
 
-        menuNav.classList.remove('active');
-        burgersNav.classList.remove('active');
-        pizzaNav.classList.remove('active');
-        contactNav.classList.remove('active');
-    }
-});
+//         menuNav.classList.remove('active');
+//         burgersNav.classList.remove('active');
+//         pizzaNav.classList.remove('active');
+//         contactNav.classList.remove('active');
+//     }
+// });
 
 
 
@@ -218,25 +222,87 @@ document.querySelector('nav#footer-nav2 a[href="#salates"').addEventListener('cl
 
 
 
+
+
 // Menu food list dots dynamic width
 
-// sandwitch section:
 
-let SandwichListItems = [...document.querySelectorAll('#sandwich .food-list > li')];
-let SandwichFoodDescription = [...document.querySelectorAll('#sandwich .food-list-food p')];
-let SandwichDottedLine = [...document.querySelectorAll('#sandwich .food-list .dotted-line')];
+// sandwich section:
+
+let sandwichListItems = [...document.querySelectorAll('#sandwich .food-list > li')];
+let sandwichFoodDescription = [...document.querySelectorAll('#sandwich .food-list-food p')];
+let sandwichDottedLine = [...document.querySelectorAll('#sandwich .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<9; i++) {
-    SandwichDottedLine[i].style.width = `${857 - 160 - SandwichFoodDescription[i].offsetWidth}px`;
+    sandwichDottedLine[i].style.width = `${857 - 160 - sandwichFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
 
+// thrakopsomo section:
+
+let thrakopsomoListItems = [...document.querySelectorAll('#thrakopsomo .food-list > li')];
+let thrakopsomoFoodDescription = [...document.querySelectorAll('#thrakopsomo .food-list-food p')];
+let thrakopsomoDottedLine = [...document.querySelectorAll('#thrakopsomo .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<12; i++) {
+    thrakopsomoDottedLine[i].style.width = `${1257 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
+}}, 1000);
 
 
+// vromiko section:
+
+let vromikoListItems = [...document.querySelectorAll('#vromiko .food-list > li')];
+let vromikoFoodDescription = [...document.querySelectorAll('#vromiko .food-list-food p')];
+let vromikoDottedLine = [...document.querySelectorAll('#vromiko .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<8; i++) {
+    vromikoDottedLine[i].style.width = `${1080 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
+}}, 1000);
 
 
+// club-hot-dogs section:
 
+let clubHotDogsListItems = [...document.querySelectorAll('#club-hot-dogs .food-list > li')];
+let clubHotDogsFoodDescription = [...document.querySelectorAll('#club-hot-dogs .food-list-food p')];
+let clubHotDogsDottedLine = [...document.querySelectorAll('#club-hot-dogs .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<6; i++) {
+    clubHotDogsDottedLine[i].style.width = `${1110 - 120 - clubHotDogsFoodDescription[i].offsetWidth}px`;
+}}, 1000);
+
+
+// burgers section:
+
+let burgersListItems = [...document.querySelectorAll('#burgers .food-list > li')];
+let burgersFoodDescription = [...document.querySelectorAll('#burgers .food-list-food p')];
+let burgersDottedLine = [...document.querySelectorAll('#burgers .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<8; i++) {
+    burgersDottedLine[i].style.width = `${1000 - 120 - burgersFoodDescription[i].offsetWidth}px`;
+}}, 1000);
+
+
+// salads section:
+
+let salatesListItems = [...document.querySelectorAll('#salates .food-list > li')];
+let salatesFoodDescription = [...document.querySelectorAll('#salates .food-list-food p')];
+let salatesDottedLine = [...document.querySelectorAll('#salates .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<3; i++) {
+    salatesDottedLine[i].style.width = `${1000 - 120 - salatesFoodDescription[i].offsetWidth}px`;
+}}, 1000);
+
+
+// merides section:
+
+let meridesListItems = [...document.querySelectorAll('#merides .food-list > li')];
+let meridesFoodDescription = [...document.querySelectorAll('#merides .food-list-food p')];
+let meridesDottedLine = [...document.querySelectorAll('#merides .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<15; i++) {
+    meridesDottedLine[i].style.width = `${1000 - 120 - meridesFoodDescription[i].offsetWidth}px`;
+}}, 1000);
 
 
 
