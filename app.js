@@ -1,23 +1,22 @@
 /* sticky navbar and sticky mobile navigation menu*/
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
 // Get the navbar (the whole header of the website)
 var navbar = document.getElementById('navbar');
 
 // Get the offset position of the navbar
 var sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar and color 'BURGERS' nav option when you reach its scroll position. Remove "sticky" from navbar and coloring from 'BURGERS' when you leave the scroll position
-
-let homeNav = document.querySelector('li.top-nav-item a[href="./index.html"]');
-let menuNav = document.querySelector('li.top-nav-item a[href="#menu"]');
+let sandwichNav = document.querySelector('li.top-nav-item a[href="#sandwich"]');
+let thrakopsomoNav = document.querySelector('li.top-nav-item a[href="#thrakopsomo"]');
+let vromikoNav = document.querySelector('li.top-nav-item a[href="#vromiko"]');
+let clubHotDogsNav = document.querySelector('li.top-nav-item a[href="#club-hot-dogs"]');
 let burgersNav = document.querySelector('li.top-nav-item a[href="#burgers"]');
-let pizzaNav = document.querySelector('li.top-nav-item a[href="#pizza"]');
 let salatesNav = document.querySelector('li.top-nav-item a[href="#salates"]');
-let contactNav = document.querySelector('li.top-nav-item a[href="#contact"]');
+let meridesNav = document.querySelector('li.top-nav-item a[href="#merides"]');
+let mySandwichNav = document.querySelector('li.top-nav-item a[href="#my-sandwich"]');
 
+let navLogo = document.querySelector('header#navbar a#logo');
+let navigationBar = document.querySelector('nav#top-nav');
 
 let burgerMenu = document.querySelector("#burger-menu");
 
@@ -30,27 +29,54 @@ let mobileNavLink = [...document.querySelectorAll("#mobile-nav > ul > li > a")];
 
 let sandwichSection = document.getElementById('sandwich');
 
+let footer = document.querySelector('footer');
+let telephonePopUp = document.querySelector('#telephone-popup');
+
+
+
+// When the user scrolls the page, execute myFunction, responsible for making the navbar sticky
+// and also execute a function that fixes the broken footer layout caused by the telephone popup 
+
+
+
+window.onscroll = function() {myFunction()
+
+// hide the telephone pop-up when reaching the bottom of the page:
+
+    if ((telephonePopUp.offsetTop > 14713) && !(telephonePopUp.classList.contains('hidden'))){
+        telephonePopUp.classList.add('hidden');
+} 
+
+    if ((telephonePopUp.offsetTop < 900) && (telephonePopUp.classList.contains('hidden'))){
+        telephonePopUp.classList.remove('hidden');
+    } 
+
+};
+
+
+
+// Add the sticky class to the navbar and color 'SANDWICH' nav option when you reach its scroll position. Remove "sticky" from navbar and coloring from 'SANDWICH' when you leave the scroll position
 
 function myFunction() {
-  if (window.pageYOffset > sticky) {
+  if (window.pageYOffset > 252) {
     navbar.classList.add('sticky');
+    navLogo.classList.add('hidden');
+    navigationBar.classList.add('small');
     sandwichSection.classList.add('spaced');
-
-    if (homeNav.classList.contains('active')) {
-        menuNav.classList.add('active');
-        homeNav.classList.remove('active');
-    }
 
   } else {
     navbar.classList.remove('sticky');
+    navLogo.classList.remove('hidden');
+    navigationBar.classList.remove('small');
     sandwichSection.classList.remove('spaced');
 
-    menuNav.classList.remove('active');
-    burgersNav.classList.remove('active');
-    pizzaNav.classList.remove('active');
-    salatesNav.classList.remove('active');
-    contactNav.classList.remove('active');
-    homeNav.classList.add('active');
+    // thrakopsomoNav.classList.remove('active');
+    // vromikoNav.classList.remove('active');
+    // clubHotDogsNav.classList.remove('active');
+    // burgersNav.classList.remove('active');
+    // salatesNav.classList.remove('active');
+    // mySandwichNav.classList.remove('active');
+    // sandwichNav.classList.add('active');
   }
 
   if (mobileNav.classList.contains('visible')) {
@@ -67,8 +93,6 @@ function myFunction() {
   }
 
 }
-
-
 
 
 
@@ -90,36 +114,54 @@ for (let i=0; i<navMenuItems.length; i++) {
             navMenuItems[i].firstElementChild.classList.add('active');
             
             switch (navMenuItems[i].firstElementChild.innerText) {
-                case 'ΑΡΧΙΚΗ':
+                case 'ΣΑΝΤΟΥΙΤΣ':
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
                     break;
                 
-                case 'ΜΕΝΟΥ':
+                case 'ΘΡΑΚΟΨΩΜΑ':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
                     break;
                 
+                case 'ΒΡΩΜΙΚΟ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
+
+                case 'CLUB-HOT DOGS':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
+
                 case 'BURGERS':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[1].firstElementChild.classList.remove('active');
-                    navMenuItems[3].firstElementChild.classList.remove('active');
-                    navMenuItems[4].firstElementChild.classList.remove('active');
-                    navMenuItems[5].firstElementChild.classList.remove('active');
-                    break;
-
-                case 'ΠΙΤΣΕΣ':
-                    navMenuItems[0].firstElementChild.classList.remove('active');
-                    navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
-                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
                     break;
 
                 case 'ΣΑΛΑΤΕΣ':
@@ -127,15 +169,30 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
-                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
                     break;
 
-                case 'ΕΠΙΚΟΙΝΩΝΙΑ':
+                case 'ΜΕΡΙΔΕΣ':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
+                    break;
+
+                case 'MY SANDWICH':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
                     break;
             }
         }
@@ -143,82 +200,173 @@ for (let i=0; i<navMenuItems.length; i++) {
 }
 
 
+
+
 // when clicking a menu option on the footer navigation:
 
-// document.querySelector('nav#footer-nav1 a[href="#contact"').addEventListener('click', () => {
-//     if (!(contactNav.classList.contains('active'))) {
-        
-//         contactNav.classList.add('active');
+let footerNavMenuItems = [...document.querySelectorAll('footer .nav-item')];
 
-//         menuNav.classList.remove('active');
-//         burgersNav.classList.remove('active');
-//         pizzaNav.classList.remove('active');
-//         salatesNav.classList.remove('active');
-//     }
-// });
+for (let i=0; i<footerNavMenuItems.length; i++) {
+    footerNavMenuItems[i].firstElementChild.style.transition = "all 0.2s ease-in-out";
 
-// document.querySelector('nav#footer-nav2 a[href="#burgers"').addEventListener('click', () => {
-//     if (!(burgersNav.classList.contains('active'))) {
-        
-//         burgersNav.classList.add('active');
+    footerNavMenuItems[i].firstElementChild.addEventListener('click', () => {
 
-//         menuNav.classList.remove('active');
-//         pizzaNav.classList.remove('active');
-//         salatesNav.classList.remove('active');
-//         contactNav.classList.remove('active');
-//     }
-// });
+        if (!(navMenuItems[i].firstElementChild.classList.contains('active'))) {
+            
+            navMenuItems[i].firstElementChild.classList.add('active');
+            
+            switch (footerNavMenuItems[i].firstElementChild.innerText) {
+                case 'ΣΑΝΤΟΥΙΤΣ':
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
+                
+                case 'ΘΡΑΚΟΨΩΜΑ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
+                
+                case 'ΒΡΩΜΙΚΟ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
 
-// document.querySelector('nav#footer-nav2 a[href="#pizza"').addEventListener('click', () => {
-//     if (!(pizzaNav.classList.contains('active'))) {
-        
-//         pizzaNav.classList.add('active');
+                case 'CLUB-HOT DOGS':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
 
-//         menuNav.classList.remove('active');
-//         burgersNav.classList.remove('active');
-//         salatesNav.classList.remove('active');
-//         contactNav.classList.remove('active');
-//     }
-// });
+                case 'BURGERS':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
 
-// document.querySelector('nav#footer-nav2 a[href="#salates"').addEventListener('click', () => {
-//     if (!(salatesNav.classList.contains('active'))) {
-        
-//         salatesNav.classList.add('active');
+                case 'ΣΑΛΑΤΕΣ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
 
-//         menuNav.classList.remove('active');
-//         burgersNav.classList.remove('active');
-//         pizzaNav.classList.remove('active');
-//         contactNav.classList.remove('active');
-//     }
-// });
+                case 'ΜΕΡΙΔΕΣ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    break;
+                    break;
+
+                case 'MY SANDWICH':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    break;
+            }
+        }
+    })
+}
+
+
 
 
 
 
 // when scrolling through the menu:
 
-// let menuCategories = [...document.querySelectorAll('.menu-category')];
 
-// let options = {
-//     rootMargin: '-10%',
-//     threshold: 0.0
-// }
-
-// let observer = new IntersectionObserver(showItem, options);
-
-// function showItem(entries) {
-//     for (let i=0; i<entries.length; i++) {
-//         if(entries[i].isIntersecting){
-//             document.querySelector(`li.top-nav-item a[href="#${menuCategories[i].firstElementChild.innerText.toLowerCase()}"]`).classList.add('active');
-//         }
+// let nav_icon = document.querySelector('.nav_icon');
+// let line = document.querySelector('.line');
+// let nav_menu = document.querySelector('.nav_menu');
+// let nav_links = document.querySelectorAll('.nav_list');
+// let nav_length = nav_links.length;
+// nav_icon.addEventListener('click', () => {
+//   line.classList.toggle('active');
+//   nav_menu.classList.toggle('active');
+//   nav_links.forEach((link, index) => {
+//     if (link.style.animation) {
+//       link.style.animation = '';
+//     } else {
+//       link.style.animation = `linkFadeIn 0.5s ease forwards ${
+//         index / nav_length + 0.2
+//       }s`;
 //     }
-// }
+//   });
+// });
+// let header = document.querySelector('.header');
+// let hero = document.querySelector('.hero');
+// let header_height = header.getBoundingClientRect().height;
 
-// menuCategories.forEach(category => {
-//     observer.observe(category);
-// })
+// let sticky = (entries) => {
+//   let [entry] = entries;
+//   if (!entry.isIntersecting) {
+//     header.classList.add('sticky');
+//   } else {
+//     header.classList.remove('sticky');
+//   }
+// };
+// let hero_observer = new IntersectionObserver(sticky, {
+//   root: null,
+//   threshold: 0,
+//   rootMargin: `-${header_height}px`,
+// });
+// hero_observer.observe(hero);
 
+// // Active nav-start
+// const sectionAll = document.querySelectorAll('section[id]');
+// window.addEventListener('scroll', () => {
+//   const scrollY = window.pageYOffset;
+//   sectionAll.forEach((current) => {
+//     const sectionHeight = current.offsetHeight;
+//     const sectionTop = current.offsetTop - 100;
+//     const sectionId = current.getAttribute('id');
+//     console.log(sectionId);
+//     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+//       document
+//         .querySelector('li a[href*="' + sectionId + '"]')
+//         .classList.add('active');
+//     } else {
+//       document
+//         .querySelector('li a[href*="' + sectionId + '"]')
+//         .classList.remove('active');
+//     }
+//   });
+// });
+// // Active nav-end
 
 
 
@@ -246,7 +394,7 @@ let thrakopsomoFoodDescription = [...document.querySelectorAll('#thrakopsomo .fo
 let thrakopsomoDottedLine = [...document.querySelectorAll('#thrakopsomo .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<12; i++) {
-    thrakopsomoDottedLine[i].style.width = `${1257 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
+    thrakopsomoDottedLine[i].style.width = `${1050 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -257,7 +405,7 @@ let vromikoFoodDescription = [...document.querySelectorAll('#vromiko .food-list-
 let vromikoDottedLine = [...document.querySelectorAll('#vromiko .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<8; i++) {
-    vromikoDottedLine[i].style.width = `${1080 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
+    vromikoDottedLine[i].style.width = `${1000 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -268,7 +416,7 @@ let clubHotDogsFoodDescription = [...document.querySelectorAll('#club-hot-dogs .
 let clubHotDogsDottedLine = [...document.querySelectorAll('#club-hot-dogs .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<6; i++) {
-    clubHotDogsDottedLine[i].style.width = `${1110 - 120 - clubHotDogsFoodDescription[i].offsetWidth}px`;
+    clubHotDogsDottedLine[i].style.width = `${1000 - 120 - clubHotDogsFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -308,15 +456,6 @@ setTimeout(function(){for (let i=0; i<15; i++) {
 
 
 
-
-
-
-
-
-
-
-
-
 // Burger menu click animation (for mobile)
 
 burgerMenu.addEventListener('click', () => {
@@ -333,3 +472,5 @@ burgerMenu.addEventListener('click', () => {
         mobileNavLink[i].classList.toggle('visible');
     }
 })
+
+

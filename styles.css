@@ -221,13 +221,23 @@ header {
     background-color: #F8EAD4;
     z-index: 10;
     width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+header#navbar a#logo.hidden {
+    display: none;
 }
 
 .sticky {
     position: fixed;
+    justify-content: center;
     top: 0;
     width: 100%;
+    height: 80px;
     box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+    background-color: rgb(248,234,212);
+    backdrop-filter: blur(8px);
 }
 
 #sandwich.spaced {
@@ -264,6 +274,10 @@ header #logo {
 
 header nav {
     margin-bottom: 30px;
+}
+
+header nav.small {
+    margin-bottom: 0;
 }
 
 nav, nav > ul, nav > ul > li {
@@ -569,7 +583,7 @@ section#thrakopsomo {
 }
 
 #thrakopsomo .food-list {
-    max-width: 1257px;    
+    max-width: 1050px;    
 }
 
 #thrakopsomo .food-list .dotted-line {
@@ -619,7 +633,7 @@ section#vromiko {
 }
 
 #vromiko .food-list {
-    max-width: 1072px;    
+    max-width: 1000px;    
 }
 
 #vromiko .food-list .dotted-line {
@@ -669,7 +683,7 @@ section#club-hot-dogs {
 }
 
 #club-hot-dogs .food-list {
-    max-width: 1110px;    
+    max-width: 1000px;    
 }
 
 #club-hot-dogs .food-list .dotted-line {
@@ -1006,8 +1020,13 @@ nav#footer-nav1 ul {
     margin-right: 30px;
 }
 
+nav#footer-nav1 li.nav-item a.active {
+    color: #FFD88D;
+    font-weight: 400;
+}
+
 #footer-nav2 p {
-    font-size: 20px;
+    font-size: 18px;
     color: #C2C2C2;
     line-height: 149.8%;
 }
@@ -1015,6 +1034,7 @@ nav#footer-nav1 ul {
 #footer-nav2 > p > a {
     color: #FFBA34;
     font-family: 'Manrope';
+    font-size: 20px;
     font-weight: 700;
     transition: all 0.3s ease-in-out;
 }
@@ -1060,6 +1080,62 @@ nav#footer-nav1 ul {
 }
 
 
+
+/* TELEPHONE POP-UP */
+
+#telephone-popup {
+    position: sticky;
+    display: inline-flex;
+    align-items: center;
+    float: right;
+    right: 30px;
+    bottom: 30px;
+    background: rgba(33,32,30,0.8);
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 0px 27px #AD0008;
+    border-radius: 65px;
+    transition: all 0.2s ease-in-out;
+}
+
+#telephone-popup p {
+    display: inline;
+    padding: 16px 50px;
+    font-family: 'Dela Gothic One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: 0.5px;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+#telephone-popup img {
+    padding: 20px;
+    background: #920000;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+#telephone-popup:hover {
+    box-shadow: 0px 0px 25px 2px #ad0008;
+    background: white;
+    transition: all 0.2s ease-in-out;
+}
+
+#telephone-popup:hover p {
+    color: #21201E;
+    transition: all 0.2s ease-in-out;
+}
+
+#telephone-popup:hover img {
+    background: #21201E;
+    transition: all 0.2s ease-in-out;
+}
+
+#telephone-popup.hidden {
+    position: absolute;
+}
 
 
 
