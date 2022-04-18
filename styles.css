@@ -1327,6 +1327,11 @@ nav#footer-nav1 li.nav-item a.active {
         display: none;
     }
 
+    #telephone-popup img {
+        background: #21201e;
+        padding: 15px;
+    }
+
     /* header */
 
     nav#top-nav {
@@ -1547,6 +1552,10 @@ nav#footer-nav1 li.nav-item a.active {
         display: none;
     }
 
+    #vromiko .details, #club-hot-dogs .details, #salates .details {
+        display: none;
+    }
+
 }
 
 
@@ -1675,6 +1684,10 @@ nav#footer-nav1 li.nav-item a.active {
         height: 1700px;
     }
 
+    #my-sandwich h1 {
+        margin: 90px 0 90px 0
+    }
+
     #my-sandwich .food-description br {
         display: none;
     }
@@ -1731,6 +1744,10 @@ nav#footer-nav1 li.nav-item a.active {
 
     .food-icons .col {
         margin: 25px 0;
+    }
+
+    .menu-category-showcase {
+        margin-bottom: 50px;
     }
     
 
