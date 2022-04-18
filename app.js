@@ -16,8 +16,10 @@ let meridesNav = document.querySelector('li.top-nav-item a[href="#merides"]');
 let mySandwichNav = document.querySelector('li.top-nav-item a[href="#my-sandwich"]');
 
 let navLogo = document.querySelector('header#navbar a#logo');
-let navigationBar = document.querySelector('nav#top-nav');
+let desktopNavLogoImage = document.querySelector('header#navbar a#logo img:nth-of-type(1)');
+let mobileNavLogoImage = document.querySelector('header#navbar a#logo img:nth-of-type(2)');
 
+let navigationBar = document.querySelector('nav#top-nav');
 let burgerMenu = document.querySelector("#burger-menu");
 
 let knifeIcon = document.querySelector("#burger-menu > img:nth-of-type(1)");
@@ -25,7 +27,9 @@ let spoonIcon = document.querySelector("#burger-menu > img:nth-of-type(2)");
 let forkIcon = document.querySelector("#burger-menu > img:nth-of-type(3)");
 
 let mobileNav = document.querySelector("#mobile-nav");
+let mobileNavLogo = document.querySelector("#logo");
 let mobileNavLink = [...document.querySelectorAll("#mobile-nav > ul > li > a")];
+let mobileDropdownMenuLogo = document.querySelector('#mobile-nav > ul > li > a img');
 
 let sandwichSection = document.getElementById('sandwich');
 
@@ -43,11 +47,11 @@ window.onscroll = function() {myFunction()
 
 // hide the telephone pop-up when reaching the bottom of the page:
 
-    if ((telephonePopUp.offsetTop > 14713) && !(telephonePopUp.classList.contains('hidden'))){
+    if ((telephonePopUp.offsetTop > 14713) && !(telephonePopUp.classList.contains('hidden'))) {
         telephonePopUp.classList.add('hidden');
-} 
+    }
 
-    if ((telephonePopUp.offsetTop < 900) && (telephonePopUp.classList.contains('hidden'))){
+    if ((telephonePopUp.offsetTop < 900) && (telephonePopUp.classList.contains('hidden'))) {
         telephonePopUp.classList.remove('hidden');
     } 
 
@@ -58,30 +62,75 @@ window.onscroll = function() {myFunction()
 // Add the sticky class to the navbar and color 'SANDWICH' nav option when you reach its scroll position. Remove "sticky" from navbar and coloring from 'SANDWICH' when you leave the scroll position
 
 function myFunction() {
-  if (window.pageYOffset > 252) {
-    navbar.classList.add('sticky');
-    navLogo.classList.add('hidden');
-    navigationBar.classList.add('small');
-    sandwichSection.classList.add('spaced');
+  
+  if (window.innerWidth <= 680) {
+
+    if (window.pageYOffset > 150) {
+        navbar.classList.add('sticky');
+        
+        mobileNavLogoImage.classList.add('sticky');
+    
+        navigationBar.classList.add('small');
+        sandwichSection.classList.add('spaced');
+    
+    } else {
+      navbar.classList.remove('sticky');
+    
+      mobileNavLogoImage.classList.remove('sticky');
+    
+      navigationBar.classList.remove('small');
+      sandwichSection.classList.remove('spaced');
+      }
+
+  } else if (window.innerWidth <= 1000 && window.innerWidth > 680) {
+      if (window.pageYOffset > 150) {
+          navbar.classList.add('sticky');
+          
+          desktopNavLogoImage.classList.add('sticky');
+      
+          navigationBar.classList.add('small');
+          sandwichSection.classList.add('spaced');
+      
+      } else {
+        navbar.classList.remove('sticky');
+      
+        desktopNavLogoImage.classList.remove('sticky');
+      
+        navigationBar.classList.remove('small');
+        sandwichSection.classList.remove('spaced');
+        }
 
   } else {
-    navbar.classList.remove('sticky');
-    navLogo.classList.remove('hidden');
-    navigationBar.classList.remove('small');
-    sandwichSection.classList.remove('spaced');
+      
+        if (window.pageYOffset > 252) {
+          navbar.classList.add('sticky');
+          navLogo.classList.add('hidden');
+          navigationBar.classList.add('small');
+          sandwichSection.classList.add('spaced');
+      
+        } else {
+          navbar.classList.remove('sticky');
+          navLogo.classList.remove('hidden');
+          navigationBar.classList.remove('small');
+          sandwichSection.classList.remove('spaced');
+      
+          // thrakopsomoNav.classList.remove('active');
+          // vromikoNav.classList.remove('active');
+          // clubHotDogsNav.classList.remove('active');
+          // burgersNav.classList.remove('active');
+          // salatesNav.classList.remove('active');
+          // mySandwichNav.classList.remove('active');
+          // sandwichNav.classList.add('active');
+        }
 
-    // thrakopsomoNav.classList.remove('active');
-    // vromikoNav.classList.remove('active');
-    // clubHotDogsNav.classList.remove('active');
-    // burgersNav.classList.remove('active');
-    // salatesNav.classList.remove('active');
-    // mySandwichNav.classList.remove('active');
-    // sandwichNav.classList.add('active');
   }
+
 
   if (mobileNav.classList.contains('visible')) {
     
     mobileNav.classList.toggle('visible');
+    mobileDropdownMenuLogo.classList.toggle('visible');
+    mobileNavLogo.classList.toggle('invisible');
 
     knifeIcon.classList.toggle('animate-icon');
     spoonIcon.classList.toggle('animate-icon');
@@ -465,6 +514,9 @@ burgerMenu.addEventListener('click', () => {
     forkIcon.classList.toggle('animate-icon');
 
     mobileNav.classList.toggle('visible');
+    mobileDropdownMenuLogo.classList.toggle('visible');
+    mobileNavLogo.classList.toggle('invisible');
+
     // HTMLDivElement.style.margin = ('0');
     // body.classList.toggle('activeMobileNav');
     

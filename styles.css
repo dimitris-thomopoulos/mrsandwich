@@ -186,7 +186,7 @@ a {
 
 #burger-menu {
     display: none;
-    margin-right: 35px;
+    margin-right: 15px;
 }
 
 #burger-menu:hover {
@@ -201,6 +201,16 @@ header {
     height: 252px;
 }
 
+#navbar > #logo {
+    opacity: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+#navbar > #logo.invisible {
+    opacity: 0%;
+    transition: all 0.2s ease-in-out;
+}
+
 #navbar > #logo > img {
     transform: scale(1);
     transition: all 0.3s ease-in-out;
@@ -209,6 +219,27 @@ header {
 #navbar > #logo > img.invisible {
     transform: scale(0.1);
     transition: all 0.3s ease-in-out;
+}
+
+#navbar > #logo > img:nth-of-type(1).hidden {
+    display: none;
+}
+
+#navbar > #logo > img:nth-of-type(1).sticky {
+    transform: scale(0.71);
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar > #logo > img:nth-of-type(2).hidden {
+    display: none;
+}
+
+#navbar > #logo > img:nth-of-type(2).sticky {
+    transform: scale(0.71);
+}
+
+#navbar > #logo > img:nth-of-type(2) {
+    display: none;
 }
 
 header {
@@ -228,7 +259,7 @@ header#navbar a#logo.hidden {
     display: none;
 }
 
-.sticky {
+#navbar.sticky {
     position: fixed;
     justify-content: center;
     top: 0;
@@ -263,9 +294,10 @@ header#navbar a#logo.hidden {
     //position: absolute;
 }
 
-header #logo {
-    margin-top: 40px;
+header#navbar #logo {
+    padding-top: 40px;
 }
+
 
 #weekly-offer {
     right: 0;
@@ -320,20 +352,20 @@ nav, nav > ul, nav > ul > li {
 
 
 #mobile-nav {
-    background: rgba(198, 67, 23, 0.75);
-    backdrop-filter: blur(12px);
+    background: rgba(33, 32, 30, 0.8);
+    backdrop-filter: blur(20px);
     position: fixed;
     z-index: 10;
     max-width: 304px;
+    top: 0;
     width: 0;
     border-bottom-right-radius: 15px;
-    box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
     transition: all 0.3s ease-in-out;
-    display: none;
 }
 
 #mobile-nav > ul > li > a {
-    font-size: 0.1px;
+    font-size: 0.000000001px;
     color: white;
     display: block;
     padding: 15px 0;
@@ -342,6 +374,7 @@ nav, nav > ul, nav > ul > li {
 
 #mobile-nav.visible {
     width: 70vw;
+    box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.25);
 }
 
 #mobile-nav.hidden {
@@ -353,17 +386,27 @@ nav, nav > ul, nav > ul > li {
     transition: font 0.3s ease-in-out;
 }
 
+#mobile-nav > ul > li > a img.visible {
+    width: initial;
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-nav > ul > li > a img {
+    width: 0;
+    transition: all 0.3s ease-in-out;
+}
+
 
 #mobile-nav > ul > li > a:hover {
     color: #ffcd15;
     transition: all 0.2s ease-in-out;
 }
 
-#mobile-nav > ul > li:nth-of-type(1) > a {
-    margin-top: 25px;
+#mobile-nav > ul > li:nth-of-type(2) > a {
+    margin-top: 5px;
 }
 
-#mobile-nav > ul > li:nth-of-type(6) > a {
+#mobile-nav > ul > li:nth-of-type(9) > a {
     margin-bottom: 25px;
 }
 
@@ -926,6 +969,7 @@ section#my-sandwich {
 #ingredients ul h5 {
     text-align: center;
     margin-bottom: 30px;
+    font-size: 24px;
     color: #982A3A;
 }
 
@@ -1167,24 +1211,41 @@ nav#footer-nav1 li.nav-item a.active {
         display: none;
     }
 
-    header {
-        justify-content: right;
-    }
-
-    nav#top-nav {
-        margin-right: 120px;
-    }
 }
 
 
 /* mobile/tablet devices */
 
-@media (max-width: 1206px) {
+@media (max-width: 1200px) {
+    .top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(9)) {
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 1000px) {
 
     /* header */
 
     nav#top-nav {
         display: none;
+    }
+
+    #navbar.sticky {
+        justify-content: space-between;
+    }
+
+    header {
+        flex-direction: row;
+        height: 150px;
+    }
+
+    header#navbar #logo {
+        padding-top: 0;
+        padding-left: 15px;
+    }
+
+    header#navbar.sticky #logo {
+        padding-left: 0;
     }
 
     #burger-menu {
@@ -1344,20 +1405,19 @@ nav#footer-nav1 li.nav-item a.active {
         margin: 30px 35px;
     }
 
+    #navbar > #logo > img:nth-of-type(1) {
+        display: none;
+    }
+
+    #navbar > #logo > img:nth-of-type(2) {
+        display: initial;
+    }
 
 
 }
 
 
 @media (max-width: 520px) {
-
-    header,#logo {
-        height: 119px;
-    }
-
-    header > a#logo > img {
-        width: 219px;
-    }
 
     iframe {
         max-width: 90vw;
@@ -1424,10 +1484,6 @@ nav#footer-nav1 li.nav-item a.active {
     header > a#logo {
         display: flex;
         align-items: center;
-    }
-
-    header > a#logo > img {
-        width: 180px;
     }
 }
 
