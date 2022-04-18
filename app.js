@@ -443,7 +443,7 @@ let thrakopsomoFoodDescription = [...document.querySelectorAll('#thrakopsomo .fo
 let thrakopsomoDottedLine = [...document.querySelectorAll('#thrakopsomo .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<12; i++) {
-    thrakopsomoDottedLine[i].style.width = `${1186 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
+    thrakopsomoDottedLine[i].style.width = `${1086 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -454,7 +454,7 @@ let vromikoFoodDescription = [...document.querySelectorAll('#vromiko .food-list-
 let vromikoDottedLine = [...document.querySelectorAll('#vromiko .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<8; i++) {
-    vromikoDottedLine[i].style.width = `${1100 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
+    vromikoDottedLine[i].style.width = `${1050 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -465,7 +465,7 @@ let clubHotDogsFoodDescription = [...document.querySelectorAll('#club-hot-dogs .
 let clubHotDogsDottedLine = [...document.querySelectorAll('#club-hot-dogs .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<6; i++) {
-    clubHotDogsDottedLine[i].style.width = `${1000 - 120 - clubHotDogsFoodDescription[i].offsetWidth}px`;
+    clubHotDogsDottedLine[i].style.width = `${850 - 120 - clubHotDogsFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -476,7 +476,7 @@ let burgersFoodDescription = [...document.querySelectorAll('#burgers .food-list-
 let burgersDottedLine = [...document.querySelectorAll('#burgers .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<8; i++) {
-    burgersDottedLine[i].style.width = `${1000 - 120 - burgersFoodDescription[i].offsetWidth}px`;
+    burgersDottedLine[i].style.width = `${1050 - 120 - burgersFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -487,7 +487,7 @@ let salatesFoodDescription = [...document.querySelectorAll('#salates .food-list-
 let salatesDottedLine = [...document.querySelectorAll('#salates .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<3; i++) {
-    salatesDottedLine[i].style.width = `${1000 - 120 - salatesFoodDescription[i].offsetWidth}px`;
+    salatesDottedLine[i].style.width = `${900 - 120 - salatesFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -498,7 +498,7 @@ let meridesFoodDescription = [...document.querySelectorAll('#merides .food-list-
 let meridesDottedLine = [...document.querySelectorAll('#merides .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<15; i++) {
-    meridesDottedLine[i].style.width = `${1050 - 120 - meridesFoodDescription[i].offsetWidth}px`;
+    meridesDottedLine[i].style.width = `${950 - 120 - meridesFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
