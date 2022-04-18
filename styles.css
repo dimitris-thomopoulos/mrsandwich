@@ -352,8 +352,8 @@ nav, nav > ul, nav > ul > li {
 
 
 #mobile-nav {
-    background: rgba(33, 32, 30, 0.8);
-    backdrop-filter: blur(20px);
+    background: rgba(33, 32, 30, 1);
+    /* backdrop-filter: blur(20px); */
     position: fixed;
     z-index: 10;
     max-width: 304px;
@@ -508,9 +508,12 @@ section {
     right: 0;
 }
 
-.food-list > li {
-    align-items: flex-end;
-    margin: 15px 0;
+.food-list li {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 7px 0;
 }
 
 .food-list .dotted-line {
@@ -536,10 +539,15 @@ section {
 
 .details {
     padding: 90px 0 120px 0;
+    
 }
 
 .details p {
     text-align: center;
+}
+
+.details p br {
+    display: none;
 }
 
 
@@ -626,7 +634,7 @@ section#thrakopsomo {
 }
 
 #thrakopsomo .food-list {
-    max-width: 1050px;    
+    max-width: 1186px;    
 }
 
 #thrakopsomo .food-list .dotted-line {
@@ -676,7 +684,7 @@ section#vromiko {
 }
 
 #vromiko .food-list {
-    max-width: 1000px;    
+    max-width: 1200px;    
 }
 
 #vromiko .food-list .dotted-line {
@@ -709,6 +717,15 @@ section#club-hot-dogs {
 
 #club-hot-dogs h1 {
     color: #630077;
+    text-align: center;
+}
+
+#club-hot-dogs .food-title {
+    text-shadow: -2px 2px 3px rgba(255, 255, 255, 0.6);
+}
+
+#club-hot-dogs .food-list-food h3 {
+    text-shadow: -2px 2px 3px rgba(255, 255, 255, 0.6);
 }
 
 #club-hot-dogs .food-price, #club-hot-dogs .food-list .price-tag {
@@ -779,7 +796,7 @@ section#burgers {
 }
 
 #burgers .food-list {
-    max-width: 990px;    
+    max-width: 1200px;    
 }
 
 #burgers .food-list .dotted-line {
@@ -876,7 +893,7 @@ section#merides {
 }
 
 #merides .food-list {
-    max-width: 990px;    
+    max-width: 1200px;    
 }
 
 #merides .food-list .dotted-line {
@@ -912,6 +929,7 @@ section#my-sandwich {
 #my-sandwich h1 {
     margin: 160px 0 90px 0;
     color: #9B191F;
+    text-align: center;
 }
 
 #my-sandwich .food-price, #my-sandwich .food-list .price-tag {
@@ -1196,6 +1214,21 @@ nav#footer-nav1 li.nav-item a.active {
 /* RESPONSIVENESS */
 /* RESPONSIVENESS */
 /* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
+/* RESPONSIVENESS */
 
 
 /* small desktop screens */
@@ -1216,13 +1249,37 @@ nav#footer-nav1 li.nav-item a.active {
 
 /* mobile/tablet devices */
 
+@media (max-width: 1240px) {
+    
+    .menu-category-showcase {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-category-showcase .right {
+        margin-left: 0;
+        margin-top: 60px;
+    }
+
+}
+
 @media (max-width: 1200px) {
     .top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(9)) {
         margin: 0 15px;
     }
 }
 
+@media (max-width: 1030px) {
+    #ingredients ul {
+        margin: 0;
+    }
+}
+
 @media (max-width: 1000px) {
+
+    #telephone-popup p {
+        display: none;
+    }
 
     /* header */
 
@@ -1310,54 +1367,96 @@ nav#footer-nav1 li.nav-item a.active {
         padding: 0 20px;
     }
 
+    .food-list p.dotted-line {
+        display: none;
+    }
+
     .food-price {
         margin-left: 15px;
     }
 
-    #double-trouble > .right {
-        display: none;
+    .food-list li:nth-of-type(odd) {
+        border-radius: 15px;        
     }
-
-    #chicken-dinner > .left {
-        display: none;
-    }
-
-    #pepperoni-hell > .right {
-        display: none;
-    }
-
-    #xoriatiki-classic > .left {
-        display: none;
-    }
-
-    #caesars-salad > .right {
-        display: none;
-    }
-
-    #greek-freak > .left {
-        display: none;
-    }
-
+    
     .menu-category-showcase .right {
         margin-left: 0;
     }
-
     
+    .food-list li {
+        padding: 20px 0;
+        position: relative;
+    }
+
+    .food-list-food + div {
+        position: absolute;
+        top: 0px;
+        right: 15px;
+    }
+
+    .food-list .price-tag {
+        font-size: 24px;
+    }
+    
+    .food-list-food p {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .food-list-food h3 {
+        max-width: 450px;
+        margin-left: 15px;
+    }
+    
+    .details {
+        padding: 90px 0 90px 0;
+    }
+
+    .details p br {
+        display: initial;
+    }
+
+
+    #sandwich .food-list, #thrakopsomo .food-list, #vromiko .food-list, #club-hot-dogs .food-list, #burgers .food-list, #salates .food-list, #merides .food-list, #my-sandwich .food-list {
+        max-width: 857px;
+    }
+    
+    #sandwich .food-list li:nth-of-type(odd) {
+        background: #FFF5E7;
+    }
+    
+    #thrakopsomo .food-list li:nth-of-type(odd) {
+        background: #812432;
+    }
+
+    #vromiko .food-list li:nth-of-type(odd) {
+        background: #4D1D57;
+    }
+    
+    #club-hot-dogs .food-list li:nth-of-type(odd) {
+        background: #ffcb68;
+    }
+    
+    #burgers .food-list li:nth-of-type(odd) {
+        background: #131313;
+    }
+
+    #salates .food-list li:nth-of-type(odd) {
+        background: #D1FFD5;
+    }
+
+    #merides .food-list li:nth-of-type(odd) {
+        background: #5C110D;
+    }
+
+
+
     /* contact section */
 
-    #contact-map {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #contact input[type="submit"] {
-        width: 60%;
-        align-self: center;
-    }
-
-    #contact iframe {
-        margin-left: 0;
-        margin-top: 100px;
+    iframe {
+        height: 780px;
+        width: 420px;
+        margin: 0 auto;
     }
 
 
@@ -1366,6 +1465,10 @@ nav#footer-nav1 li.nav-item a.active {
     footer {
         height: 600px;
         flex-direction: column;
+    }
+
+    footer > a {
+        margin: 80px 0;
     }
 
     img#footer-logo {
@@ -1387,6 +1490,33 @@ nav#footer-nav1 li.nav-item a.active {
     #copyright > p {
         margin: 10px 0 !important;
     }
+}
+
+
+
+@media (max-width: 875px) {
+    
+    .food-list li:nth-of-type(odd) {
+        border-radius: 0;
+    }
+    
+    .details {
+        width: 100%;
+    }
+
+    .details:not(#vromiko .details, #club-hot-dogs .details, #salates .details, #my-sandwich .details) {
+        box-shadow: inset 0px 2px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .details p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .details p br {
+        display: none;
+    }
+    
 }
 
 
@@ -1416,6 +1546,19 @@ nav#footer-nav1 li.nav-item a.active {
 
 }
 
+@media (max-width: 657px) {
+    #ingredients ul {
+        margin: 40px 0;
+    }
+
+    #ingredients #kreatika h5 {
+        margin-top: 0px;
+    }
+
+    #ingredients #sauce h5 {
+        margin-top: 0px;
+    }
+}
 
 @media (max-width: 520px) {
 
@@ -1443,14 +1586,6 @@ nav#footer-nav1 li.nav-item a.active {
         font-size: 20px;
     }
 
-    #added-to-cart {
-        width: 250px;
-    }
-
-    #added-to-cart h3 {
-        font-size: 20px;
-    }
-
 
 
 }
@@ -1469,13 +1604,6 @@ nav#footer-nav1 li.nav-item a.active {
         margin: 25px 0;
     }
     
-    #added-to-cart {
-        padding: 18px 20px;
-    }
-
-    #added-to-cart h3 {
-        font-size: 18px;
-    }
 
 }
 

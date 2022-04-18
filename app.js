@@ -443,7 +443,7 @@ let thrakopsomoFoodDescription = [...document.querySelectorAll('#thrakopsomo .fo
 let thrakopsomoDottedLine = [...document.querySelectorAll('#thrakopsomo .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<12; i++) {
-    thrakopsomoDottedLine[i].style.width = `${1050 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
+    thrakopsomoDottedLine[i].style.width = `${1186 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -454,7 +454,7 @@ let vromikoFoodDescription = [...document.querySelectorAll('#vromiko .food-list-
 let vromikoDottedLine = [...document.querySelectorAll('#vromiko .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<8; i++) {
-    vromikoDottedLine[i].style.width = `${1000 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
+    vromikoDottedLine[i].style.width = `${1100 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
@@ -498,7 +498,7 @@ let meridesFoodDescription = [...document.querySelectorAll('#merides .food-list-
 let meridesDottedLine = [...document.querySelectorAll('#merides .food-list .dotted-line')];
 
 setTimeout(function(){for (let i=0; i<15; i++) {
-    meridesDottedLine[i].style.width = `${1000 - 120 - meridesFoodDescription[i].offsetWidth}px`;
+    meridesDottedLine[i].style.width = `${1050 - 120 - meridesFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
 
