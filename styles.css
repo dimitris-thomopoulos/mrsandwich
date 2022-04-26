@@ -687,6 +687,11 @@ section#vromiko {
     max-width: 520px;
 }
 
+#vromiko .food-description span {
+    font-size: 15px;
+    color: #F2D6A2;
+}
+
 #vromiko .food-list {
     max-width: 1200px;    
 }
@@ -882,6 +887,10 @@ section#merides {
     color: #FFB72B;
 }
 
+#merides .details + h1, #merides #poikilia-kreatikwn + h1 {
+    margin: 50px 0 120px 0;
+}
+
 #merides .food-price, #merides .food-list .price-tag {
     color: #F2D6A2;
     text-shadow: 2px 2px 0px #1B1B1B;
@@ -896,8 +905,24 @@ section#merides {
     max-width: 590px;
 }
 
+#merides #patates-me-feta .left {
+    max-width: 550px;
+}
+
+#merides #patates-me-feta h2.food-title {
+    display: inline;
+}
+
+#merides #orektika-list {
+    margin-bottom: 210px;
+}
+
 #merides .food-list {
     max-width: 1050px;    
+}
+
+#merides .food-list#orektika-list {
+    max-width: 1135px;
 }
 
 #merides .food-list .dotted-line {
@@ -1552,8 +1577,25 @@ nav#footer-nav1 li.nav-item a.active {
         display: none;
     }
 
-    #vromiko .details, #club-hot-dogs .details, #salates .details {
+    #thrakopsomo .details, #vromiko .details, #club-hot-dogs .details, #salates .details {
         display: none;
+    }
+
+    #merides #poikilia-kreatikwn .food-title, #merides #patates-me-feta .food-title {
+        margin-top: 80px;
+    }
+
+    #merides .details + h1, #merides #poikilia-kreatikwn + h1 {
+        margin: 80px 0 40px 0;
+    }
+
+    #merides #patates-me-feta h2 {
+        margin-top: 80px;
+        font-size: 28px;
+    }
+
+    #merides #orektika-list {
+        margin-bottom: 0px;
     }
 
 }
@@ -1751,6 +1793,12 @@ nav#footer-nav1 li.nav-item a.active {
     }
     
 
+}
+
+@media (max-width: 393px) and (min-width: 381px) {
+    .food-list-food h3 {
+        max-width: 250px;
+    }
 }
 
 @media (max-width: 380px) {

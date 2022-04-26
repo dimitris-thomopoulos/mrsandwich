@@ -430,7 +430,7 @@ let sandwichListItems = [...document.querySelectorAll('#sandwich .food-list > li
 let sandwichFoodDescription = [...document.querySelectorAll('#sandwich .food-list-food p')];
 let sandwichDottedLine = [...document.querySelectorAll('#sandwich .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<9; i++) {
+setTimeout(function(){for (let i=0; i<sandwichDottedLine.length; i++) {
     sandwichDottedLine[i].style.width = `${857 - 160 - sandwichFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
@@ -442,7 +442,7 @@ let thrakopsomoListItems = [...document.querySelectorAll('#thrakopsomo .food-lis
 let thrakopsomoFoodDescription = [...document.querySelectorAll('#thrakopsomo .food-list-food p')];
 let thrakopsomoDottedLine = [...document.querySelectorAll('#thrakopsomo .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<12; i++) {
+setTimeout(function(){for (let i=0; i<thrakopsomoDottedLine.length; i++) {
     thrakopsomoDottedLine[i].style.width = `${1086 - 160 - thrakopsomoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
@@ -453,7 +453,7 @@ let vromikoListItems = [...document.querySelectorAll('#vromiko .food-list > li')
 let vromikoFoodDescription = [...document.querySelectorAll('#vromiko .food-list-food p')];
 let vromikoDottedLine = [...document.querySelectorAll('#vromiko .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<8; i++) {
+setTimeout(function(){for (let i=0; i<vromikoDottedLine.length; i++) {
     vromikoDottedLine[i].style.width = `${1050 - 120 - vromikoFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
@@ -464,7 +464,7 @@ let clubHotDogsListItems = [...document.querySelectorAll('#club-hot-dogs .food-l
 let clubHotDogsFoodDescription = [...document.querySelectorAll('#club-hot-dogs .food-list-food p')];
 let clubHotDogsDottedLine = [...document.querySelectorAll('#club-hot-dogs .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<6; i++) {
+setTimeout(function(){for (let i=0; i<clubHotDogsListItems.length; i++) {
     clubHotDogsDottedLine[i].style.width = `${850 - 120 - clubHotDogsFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
@@ -475,7 +475,7 @@ let burgersListItems = [...document.querySelectorAll('#burgers .food-list > li')
 let burgersFoodDescription = [...document.querySelectorAll('#burgers .food-list-food p')];
 let burgersDottedLine = [...document.querySelectorAll('#burgers .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<8; i++) {
+setTimeout(function(){for (let i=0; i<burgersDottedLine.length; i++) {
     burgersDottedLine[i].style.width = `${1050 - 120 - burgersFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
@@ -486,7 +486,7 @@ let salatesListItems = [...document.querySelectorAll('#salates .food-list > li')
 let salatesFoodDescription = [...document.querySelectorAll('#salates .food-list-food p')];
 let salatesDottedLine = [...document.querySelectorAll('#salates .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<3; i++) {
+setTimeout(function(){for (let i=0; i<salatesDottedLine.length; i++) {
     salatesDottedLine[i].style.width = `${900 - 120 - salatesFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
@@ -497,7 +497,7 @@ let meridesListItems = [...document.querySelectorAll('#merides .food-list > li')
 let meridesFoodDescription = [...document.querySelectorAll('#merides .food-list-food p')];
 let meridesDottedLine = [...document.querySelectorAll('#merides .food-list .dotted-line')];
 
-setTimeout(function(){for (let i=0; i<15; i++) {
+setTimeout(function(){for (let i=0; i<meridesDottedLine.length; i++) {
     meridesDottedLine[i].style.width = `${950 - 120 - meridesFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
