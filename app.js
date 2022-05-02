@@ -6,6 +6,7 @@ var navbar = document.getElementById('navbar');
 // Get the offset position of the navbar
 var sticky = navbar.offsetTop;
 
+let prosforesNav = document.querySelector('li.top-nav-item a[href="#prosfores"]');
 let sandwichNav = document.querySelector('li.top-nav-item a[href="#sandwich"]');
 let thrakopsomoNav = document.querySelector('li.top-nav-item a[href="#thrakopsomo"]');
 let vromikoNav = document.querySelector('li.top-nav-item a[href="#vromiko"]');
@@ -32,6 +33,7 @@ let mobileNavLink = [...document.querySelectorAll("#mobile-nav > ul > li > a")];
 let mobileDropdownMenuLogo = document.querySelector('#mobile-nav > ul > li > a img');
 
 let sandwichSection = document.getElementById('sandwich');
+let prosforesSection = document.getElementById('prosfores');
 
 let footer = document.querySelector('footer');
 let telephonePopUp = document.querySelector('#telephone-popup');
@@ -59,7 +61,7 @@ window.onscroll = function() {myFunction()
 
 
 
-// Add the sticky class to the navbar and color 'SANDWICH' nav option when you reach its scroll position. Remove "sticky" from navbar and coloring from 'SANDWICH' when you leave the scroll position
+// Add the sticky class to the navbar and color 'PROSFORES' nav option when you reach its scroll position. Remove "sticky" from navbar and coloring from 'SANDWICH' when you leave the scroll position
 
 function myFunction() {
   
@@ -71,7 +73,7 @@ function myFunction() {
         mobileNavLogoImage.classList.add('sticky');
     
         navigationBar.classList.add('small');
-        sandwichSection.classList.add('spaced');
+        prosforesSection.classList.add('spaced');
     
     } else {
       navbar.classList.remove('sticky');
@@ -79,7 +81,7 @@ function myFunction() {
       mobileNavLogoImage.classList.remove('sticky');
     
       navigationBar.classList.remove('small');
-      sandwichSection.classList.remove('spaced');
+      prosforesSection.classList.remove('spaced');
       }
 
   } else if (window.innerWidth <= 1000 && window.innerWidth > 680) {
@@ -89,7 +91,7 @@ function myFunction() {
           desktopNavLogoImage.classList.add('sticky');
       
           navigationBar.classList.add('small');
-          sandwichSection.classList.add('spaced');
+          prosforesSection.classList.add('spaced');
       
       } else {
         navbar.classList.remove('sticky');
@@ -97,7 +99,7 @@ function myFunction() {
         desktopNavLogoImage.classList.remove('sticky');
       
         navigationBar.classList.remove('small');
-        sandwichSection.classList.remove('spaced');
+        prosforesSection.classList.remove('spaced');
         }
 
   } else {
@@ -106,13 +108,13 @@ function myFunction() {
           navbar.classList.add('sticky');
           navLogo.classList.add('hidden');
           navigationBar.classList.add('small');
-          sandwichSection.classList.add('spaced');
+          prosforesSection.classList.add('spaced');
       
         } else {
           navbar.classList.remove('sticky');
           navLogo.classList.remove('hidden');
           navigationBar.classList.remove('small');
-          sandwichSection.classList.remove('spaced');
+          prosforesSection.classList.remove('spaced');
       
           // thrakopsomoNav.classList.remove('active');
           // vromikoNav.classList.remove('active');
@@ -163,7 +165,7 @@ for (let i=0; i<navMenuItems.length; i++) {
             navMenuItems[i].firstElementChild.classList.add('active');
             
             switch (navMenuItems[i].firstElementChild.innerText) {
-                case 'ΣΑΝΤΟΥΙΤΣ':
+                case 'ΠΡΟΣΦΟΡΕΣ':
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
@@ -171,9 +173,10 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
                 
-                case 'ΘΡΑΚΟΨΩΜΑ':
+                case 'ΣΑΝΤΟΥΙΤΣ':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
@@ -181,26 +184,40 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
+                    break;
+                
+                case 'ΘΡΑΚΟΨΩΜΑ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
                 
                 case 'ΒΡΩΜΙΚΟ':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[1].firstElementChild.classList.remove('active');
-                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'CLUB-HOT DOGS':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
-                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'BURGERS':
@@ -208,9 +225,10 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
-                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'ΣΑΛΑΤΕΣ':
@@ -219,8 +237,9 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
-                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'ΜΕΡΙΔΕΣ':
@@ -230,8 +249,8 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
-                    navMenuItems[7].firstElementChild.classList.remove('active');
-                    break;
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'MY SANDWICH':
@@ -242,6 +261,7 @@ for (let i=0; i<navMenuItems.length; i++) {
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
                     break;
             }
         }
@@ -256,26 +276,16 @@ for (let i=0; i<navMenuItems.length; i++) {
 let footerNavMenuItems = [...document.querySelectorAll('footer .nav-item')];
 
 for (let i=0; i<footerNavMenuItems.length; i++) {
-    footerNavMenuItems[i].firstElementChild.style.transition = "all 0.2s ease-in-out";
 
+    footerNavMenuItems[i].firstElementChild.style.transition = "all 0.2s ease-in-out";    
     footerNavMenuItems[i].firstElementChild.addEventListener('click', () => {
 
-        if (!(navMenuItems[i].firstElementChild.classList.contains('active'))) {
+        if (!(navMenuItems[i+1].firstElementChild.classList.contains('active'))) {
             
-            navMenuItems[i].firstElementChild.classList.add('active');
+            navMenuItems[i+1].firstElementChild.classList.add('active');
             
             switch (footerNavMenuItems[i].firstElementChild.innerText) {
                 case 'ΣΑΝΤΟΥΙΤΣ':
-                    navMenuItems[1].firstElementChild.classList.remove('active');
-                    navMenuItems[2].firstElementChild.classList.remove('active');
-                    navMenuItems[3].firstElementChild.classList.remove('active');
-                    navMenuItems[4].firstElementChild.classList.remove('active');
-                    navMenuItems[5].firstElementChild.classList.remove('active');
-                    navMenuItems[6].firstElementChild.classList.remove('active');
-                    navMenuItems[7].firstElementChild.classList.remove('active');
-                    break;
-                
-                case 'ΘΡΑΚΟΨΩΜΑ':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
@@ -283,26 +293,40 @@ for (let i=0; i<footerNavMenuItems.length; i++) {
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
+                    break;
+                
+                case 'ΘΡΑΚΟΨΩΜΑ':
+                    navMenuItems[0].firstElementChild.classList.remove('active');
+                    navMenuItems[1].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
                 
                 case 'ΒΡΩΜΙΚΟ':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[1].firstElementChild.classList.remove('active');
-                    navMenuItems[3].firstElementChild.classList.remove('active');
+                    navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'CLUB-HOT DOGS':
                     navMenuItems[0].firstElementChild.classList.remove('active');
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
-                    navMenuItems[4].firstElementChild.classList.remove('active');
+                    navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'BURGERS':
@@ -310,9 +334,10 @@ for (let i=0; i<footerNavMenuItems.length; i++) {
                     navMenuItems[1].firstElementChild.classList.remove('active');
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
-                    navMenuItems[5].firstElementChild.classList.remove('active');
+                    navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'ΣΑΛΑΤΕΣ':
@@ -321,8 +346,9 @@ for (let i=0; i<footerNavMenuItems.length; i++) {
                     navMenuItems[2].firstElementChild.classList.remove('active');
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
-                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[7].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'ΜΕΡΙΔΕΣ':
@@ -332,8 +358,8 @@ for (let i=0; i<footerNavMenuItems.length; i++) {
                     navMenuItems[3].firstElementChild.classList.remove('active');
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
-                    navMenuItems[7].firstElementChild.classList.remove('active');
-                    break;
+                    navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[8].firstElementChild.classList.remove('active');
                     break;
 
                 case 'MY SANDWICH':
@@ -344,6 +370,7 @@ for (let i=0; i<footerNavMenuItems.length; i++) {
                     navMenuItems[4].firstElementChild.classList.remove('active');
                     navMenuItems[5].firstElementChild.classList.remove('active');
                     navMenuItems[6].firstElementChild.classList.remove('active');
+                    navMenuItems[7].firstElementChild.classList.remove('active');
                     break;
             }
         }
@@ -501,6 +528,16 @@ setTimeout(function(){for (let i=0; i<meridesDottedLine.length; i++) {
     meridesDottedLine[i].style.width = `${950 - 120 - meridesFoodDescription[i].offsetWidth}px`;
 }}, 1000);
 
+
+// anapsyktika section:
+
+let anapsyktikaListItems = [...document.querySelectorAll('#anapsyktika .food-list > li')];
+let anapsyktikaFoodDescription = [...document.querySelectorAll('#anapsyktika .food-list-food h3')];
+let anapsyktikaDottedLine = [...document.querySelectorAll('#anapsyktika .food-list .dotted-line')];
+
+setTimeout(function(){for (let i=0; i<anapsyktikaDottedLine.length; i++) {
+    anapsyktikaDottedLine[i].style.width = `${850 - 160 - anapsyktikaFoodDescription[i].offsetWidth}px`;
+}}, 1000);
 
 
 

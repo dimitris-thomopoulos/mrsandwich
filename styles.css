@@ -110,7 +110,7 @@ body *::selection {
     color: white;
 }
 
-header *::selection, #sandwich *::selection, #my-sandwich *::selection {
+header *::selection, #prosfores *::selection, #sandwich *::selection, #my-sandwich *::selection {
     background: #9B191F;
     color: white;
 }
@@ -143,6 +143,11 @@ header *::selection, #sandwich *::selection, #my-sandwich *::selection {
 #merides *::selection {
     background: #F2D6A2;
     color: #67211D;
+}
+
+#anapsyktika *::selection {
+    background: #ffb72b;
+    color: #08304b;
 }
 
 footer *::selection {
@@ -271,7 +276,7 @@ header#navbar a#logo.hidden {
     backdrop-filter: blur(8px);
 }
 
-#sandwich.spaced {
+#prosfores.spaced {
     padding-top: 252px;
 }
 
@@ -338,7 +343,11 @@ nav, nav > ul, nav > ul > li {
     color: #9B191F;
 }
 
-.top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(9)) {
+header.sticky .top-nav-item a {
+    padding: 31px 0;
+}
+
+.top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(10)) {
     margin: 0 20px;
 }
 
@@ -406,7 +415,7 @@ nav, nav > ul, nav > ul > li {
     margin-top: 5px;
 }
 
-#mobile-nav > ul > li:nth-of-type(9) > a {
+#mobile-nav > ul > li:nth-of-type(10) > a {
     margin-bottom: 25px;
 }
 
@@ -512,12 +521,20 @@ section {
     right: 0;
 }
 
+#anapsyktika .food-list-food + div {
+    transform: none;
+}
+
 .food-list li {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
     align-items: baseline;
     padding: 7px 0;
+}
+
+#anapsyktika .food-list li {
+    padding: 14px 0;
 }
 
 .food-list .dotted-line {
@@ -555,10 +572,94 @@ section {
 }
 
 
+/* PROSFORES SECTION */
+
+section#prosfores {
+    display: flex;
+    justify-content: center;
+}
+
+section#prosfores > div {
+    margin: 100px;
+    margin-top: 400px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    max-width: 1050px;
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
+}
+
+.offer-card {
+    background-color: #21201E;
+    border-radius: 12px;
+    position: relative;
+    max-width: 465px;
+    margin-top: -300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-card .food-title {
+    font-family: 'Dela Gothic One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 39px;
+    color: #FFC700;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.offer-card .food-description {
+    color: #FFFFFF;
+    margin: 30px 20px;
+}
+
+.offer-card.left:not(.offer-card.left:nth-of-type(3)) {
+    margin-top: 60px;
+}
+
+.offer-card.right {
+    margin-left: 60px;
+}
+
+.offer-card.right img:not(.offer-card.right img.offer-tag) {
+    max-width: 340px;
+    border-radius: 12px;
+    align-self: center;
+    padding-bottom: 40px;
+    margin-top: 30px;
+}
+
+
+img.offer-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+p.offer-price-tag {
+    position: absolute;
+    top: 0;
+    padding: 22px;
+    right: 0;
+    background: #9b191f82;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 12px;
+    font-family: 'Dela Gothic One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 46px;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 0px #9B191F;
+}
+
 
 /* SANDWICH MENU SECTION */
 
-section#sandwich {
+section#prosfores, section#sandwich {
     background-color: #F8EAD4;
 }
 
@@ -918,7 +1019,7 @@ section#merides {
 }
 
 #merides .food-list {
-    max-width: 1050px;    
+    max-width: 1055px;    
 }
 
 #merides .food-list#orektika-list {
@@ -944,6 +1045,53 @@ section#merides {
     color: #F2D6A2;
 }
 
+
+/* ANAPSYKTIKA MENU SECTION */
+
+section#anapsyktika {
+    background-color: #0a4268;
+}
+
+#anapsyktika h1 {
+    color: #FFB72B;
+}
+
+#anapsyktika .food-price, #anapsyktika .food-list .price-tag {
+    color: #F2D6A2;
+    text-shadow: 2px 2px 0px #1B1B1B;
+}
+
+#anapsyktika .food-title {
+    color: #FFBA34;
+}
+
+#anapsyktika .food-description {
+    color: #F8F1E3;
+    max-width: 700px;
+}
+
+#anapsyktika .food-list {
+    max-width: 900px;    
+}
+
+#anapsyktika .food-list .dotted-line {
+    color: #F8F1E3;
+    opacity: 50%;
+}
+
+#anapsyktika .food-list-food h3 {
+    color: #FFBA34;
+}
+
+#anapsyktika .food-list-food p {
+    color: #F8F1E3;
+    max-width: 680px;
+}
+
+#anapsyktika .details p {
+    max-width: 980px;
+    color: #F2D6A2;
+}
 
 
 
@@ -1314,8 +1462,23 @@ nav#footer-nav1 li.nav-item a.active {
 
 }
 
+@media (max-width: 1210px) {
+
+    section#prosfores > div {
+        margin-top: 40px;
+    } 
+
+    .offer-card {
+        margin-top: 40px;
+    }
+
+    .offer-card.right {
+        margin-left: 20px;
+    }
+}
+
 @media (max-width: 1200px) {
-    .top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(9)) {
+    .top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(10)) {
         margin: 0 15px;
     }
 
@@ -1337,6 +1500,28 @@ nav#footer-nav1 li.nav-item a.active {
     footer > a > img {
         width: initial;
         margin: 50px 0;
+    }
+}
+
+@media (max-width: 1170px) {
+    section#prosfores > div {
+        margin: 0;
+        flex-wrap: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (min-width: 521px) and (max-width: 1170px) {
+    .offer-card.right {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1090px) {
+    .top-nav-item:not(.top-nav-item:nth-of-type(1)):not(.top-nav-item:nth-of-type(10)) {
+        margin: 0 8px;
     }
 }
 
@@ -1434,11 +1619,11 @@ nav#footer-nav1 li.nav-item a.active {
         align-self: center;
     }
 
-    .left, .right {
+    .left:not(#prosfores .left), .right:not(#prosfores .right) {
         text-align: center;
     }
 
-    .food-description {
+    .food-description:not(#prosfores .food-description) {
         text-align: left;
         padding: 0 20px;
     }
@@ -1494,7 +1679,7 @@ nav#footer-nav1 li.nav-item a.active {
     }
 
 
-    #sandwich .food-list, #thrakopsomo .food-list, #vromiko .food-list, #club-hot-dogs .food-list, #burgers .food-list, #salates .food-list, #merides .food-list, #my-sandwich .food-list {
+    #sandwich .food-list, #thrakopsomo .food-list, #vromiko .food-list, #club-hot-dogs .food-list, #burgers .food-list, #salates .food-list, #merides .food-list, #anapsyktika .food-list, #my-sandwich .food-list {
         max-width: 857px;
     }
     
@@ -1526,6 +1711,19 @@ nav#footer-nav1 li.nav-item a.active {
         background: #5C110D;
     }
 
+    #anapsyktika .food-list li:nth-of-type(odd) {
+        background: #08304b;
+    }
+
+    #anapsyktika .food-list .price-tag {
+        margin-top: 15px;
+    }
+    
+    #anapsyktika > h1 {
+        font-size: 42px;
+        text-align: center;
+        margin: 90px 0 90px 0;
+    }
 
 
     /* footer */
@@ -1571,13 +1769,14 @@ nav#footer-nav1 li.nav-item a.active {
     .details p {
         font-size: 16px;
         line-height: 22px;
+        margin: 0 15px;
     }
 
     .details p br {
         display: none;
     }
 
-    #thrakopsomo .details, #vromiko .details, #club-hot-dogs .details, #salates .details {
+    #thrakopsomo .details, #vromiko .details, #club-hot-dogs .details, #salates .details, #anapsyktika .details {
         display: none;
     }
 
@@ -1669,7 +1868,7 @@ nav#footer-nav1 li.nav-item a.active {
     }
 
     #ingredients ul {
-        margin: 40px 0;
+        margin: 40px 20px;
     }
 
     #ingredients #kreatika h5 {
@@ -1682,6 +1881,10 @@ nav#footer-nav1 li.nav-item a.active {
 }
 
 @media (max-width: 520px) {
+
+    .offer-card {
+        margin: 20px;
+    }
 
     iframe {
         max-width: 90vw;
@@ -1755,22 +1958,15 @@ nav#footer-nav1 li.nav-item a.active {
     
     section > h1 {
         margin: 80px 0 80px 0;
+        font-size: 36px !important;
     }
 
     .food-list-food h3 {
         max-width: 215px;
     }
     
-    #sandwich h1 {
-        font-size: 40px;
-    }
-
     #sandwich .food-title {
         font-size: 28px;
-    }
-
-    #thrakopsomo h1 {
-        font-size: 38px;
     }
 }
 
@@ -1795,6 +1991,14 @@ nav#footer-nav1 li.nav-item a.active {
 
 }
 
+@media (max-width: 400px) {
+    .offer-card.left, .offer-card.right {
+        margin: 20px 0px;
+    }
+
+
+}
+
 @media (max-width: 393px) and (min-width: 381px) {
     .food-list-food h3 {
         max-width: 250px;
@@ -1807,6 +2011,18 @@ nav#footer-nav1 li.nav-item a.active {
         display: flex;
         align-items: center;
     }
+
+    .offer-card {
+        max-width: 290px;
+    }
+
+    .offer-card.right img:not(.offer-card.right img.offer-tag) {
+        display: none;
+    }
+
+    #anapsyktika > h1 {
+        font-size: 30px !important;
+    }
 }
 
 @media (max-width: 350px) {
@@ -1816,6 +2032,12 @@ nav#footer-nav1 li.nav-item a.active {
 
     .food-title {
         font-size: 30px;
+    }
+}
+
+@media (max-width: 340px) {
+    .menu-category-showcase .right img {
+        max-width: 280px;
     }
 }
 
