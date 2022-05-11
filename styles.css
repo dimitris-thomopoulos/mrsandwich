@@ -630,6 +630,7 @@ section#prosfores > div {
     align-self: center;
     padding-bottom: 40px;
     margin-top: 30px;
+    border-radius: 12px;
 }
 
 
@@ -1983,7 +1984,7 @@ nav#footer-nav1 li.nav-item a.active {
     .food-icons .col {
         margin: 25px 0;
     }
-
+    
     .menu-category-showcase {
         margin-bottom: 50px;
     }
@@ -1992,10 +1993,18 @@ nav#footer-nav1 li.nav-item a.active {
 }
 
 @media (max-width: 400px) {
+    
+    .offer-card {
+        max-width: 320px;
+    }
+
     .offer-card.left, .offer-card.right {
         margin: 20px 0px;
     }
 
+    .offer-card.right img:not(.offer-card.right img.offer-tag) {
+        display: none;
+    }
 
 }
 
@@ -2012,13 +2021,7 @@ nav#footer-nav1 li.nav-item a.active {
         align-items: center;
     }
 
-    .offer-card {
-        max-width: 290px;
-    }
 
-    .offer-card.right img:not(.offer-card.right img.offer-tag) {
-        display: none;
-    }
 
     #anapsyktika > h1 {
         font-size: 30px !important;
@@ -2032,6 +2035,10 @@ nav#footer-nav1 li.nav-item a.active {
 
     .food-title {
         font-size: 30px;
+    }
+
+    .offer-card {
+        max-width: 290px;
     }
 }
 
